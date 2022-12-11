@@ -21,6 +21,10 @@
   }
 }
 
+:root {
+
+}
+
 html,
 body {
   padding: 0;
@@ -49,5 +53,17 @@ a {
 }
 
 .logo-shadow {
-  text-shadow: 0px 0 5px rgb(127, 255, 77);
+  text-shadow: 0px 0px 20px rgb(85 235 255);
+}
+
+.logo-image {
+  --shadow: drop-shadow(0 0 10px #55ebff);
+  filter: var(--shadow);
+  animation: linear 10s logo-color infinite;
+}
+
+@keyframes logo-color {
+  0% { filter: var(--shadow) hue-rotate(0deg); }
+  50% { filter: var(--shadow) hue-rotate(360deg); }
+  100% { filter: var(--shadow) hue-rotate(0deg); }
 }

@@ -5,7 +5,7 @@ module.exports = {
     extend: {
       colors: {
         'main-title': 'white',
-        logo: '#bbff89',
+        logo: '#2c3641',
       },
       backgroundColor: {
         skin: {
