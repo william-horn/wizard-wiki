@@ -5,11 +5,12 @@ module.exports = {
     extend: {
       colors: {
         'main-title': 'white',
-        logo: '#16191d',
         'base': '#c8d4e2',
         primary: '#16191d',
         secondary: '#2c3641',
-        'nav-link-hover': '#f5c000',
+        'color-3': '#bb32bb',
+        'color-4': '#2d9361',
+        'color-5': '#55ebff',
       },
       backgroundColor: {
         skin: {

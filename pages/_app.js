@@ -4,6 +4,7 @@ import { useLocalStorage } from '../hooks/useLocalStorage';
 import Enum from '../enums';
 import { useEffect, useState } from 'react';
 import MainLayout from '../components/layouts/MainLayout';
+import Screen from '../components/containers/Screen';
 
 if (typeof window !== 'undefined') {
   const allEl = window.document.querySelector("body");
@@ -23,9 +24,9 @@ function MyApp({ Component, pageProps }) {
     <AppProvider value={{
       // top level state vars
     }}>
-      <MainLayout>
+      <Screen>
         <Component {...pageProps} />
-      </MainLayout>
+      </Screen>
     </AppProvider>
   )
 }
