@@ -2,9 +2,9 @@ import Container from "../components/containers/Container";
 import Text from "../components/typography/Text";
 import MainTitle from "../components/typography/MainTitle";
 
-const Header = ({ children }) => {
+const Header = ({ children, className="" }) => {
   return (
-    <header className="bottom-line">
+    <header className={"bottom-line " + className}>
       {children}
     </header>
   );
@@ -12,7 +12,7 @@ const Header = ({ children }) => {
 
 Header.Title = ({ children }) => {
   return (
-    <MainTitle>{children}</MainTitle>
+    <MainTitle className="pt-10">{children}</MainTitle>
   );
 }
 

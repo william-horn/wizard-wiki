@@ -4,7 +4,7 @@ import { useAppContext } from '../../providers/AppProvider';
 
 const MainLayout = ({ children }) => {
   return (
-    <Screen className="bg-skin-primary">
+    <Screen>
       {children}
     </Screen>
   );
