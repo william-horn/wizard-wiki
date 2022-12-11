@@ -5,13 +5,23 @@ import Enum from '../enums';
 import { useEffect, useState } from 'react';
 import MainLayout from '../components/layouts/MainLayout';
 
-function MyApp({ Component, pageProps }) {
-  const [theme, setTheme] = useLocalStorage(Enum.StorageKeys.Theme.value, Enum.Themes.Default.value);
+if (typeof window !== 'undefined') {
+  const allEl = window.document.querySelector("body");
+  window.addEventListener("keydown", (event) => {
+    if (event.keyCode === 87) {
+      if (allEl.classList.contains("wireframe")) {
+        allEl.classList.remove("wireframe");
+      } else {
+        allEl.classList.add("wireframe");
+      }
+    }
+  });
+}
 
+function MyApp({ Component, pageProps }) {
   return (
     <AppProvider value={{
-      theme,
-      setTheme
+      // top level state vars
     }}>
       <MainLayout>
         <Component {...pageProps} />

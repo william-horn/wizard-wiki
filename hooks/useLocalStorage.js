@@ -8,7 +8,7 @@ export const useLocalStorage = (key, initialValue) => {
 
     if (prev && prev !== initialValue) { 
       setState(prev);
-    } else {
+    } else if (prev !== null) {
       localStorage.setItem(key, JSON.stringify(initialValue));
     }
   }, []);

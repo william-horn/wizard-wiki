@@ -1,14 +1,12 @@
 
-import Container from '../Container';
+import Screen from '../containers/Screen';
 import { useAppContext } from '../../providers/AppProvider';
 
 const MainLayout = ({ children }) => {
-  const { theme } = useAppContext();
-
   return (
-    <Container className={`w-screen h-screen bg-skin-primary ${theme}`}>
+    <Screen className="bg-skin-primary">
       {children}
-    </Container>
+    </Screen>
   );
 };
 

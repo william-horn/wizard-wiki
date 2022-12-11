@@ -2,7 +2,7 @@
 
 const Container = ({ children, className="" }) => {
   return (
-    <div className={"custom-container " + className}>
+    <div className={className}>
       {children}
     </div>
   );

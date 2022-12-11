@@ -6,10 +6,18 @@
 @layer base {
   :root {
     --bg-primary: #22272e;
+    --text-primary: white;
   }
 
   .theme-test {
     --bg-primary: pink;
+    --text-primary: black;
+  }
+}
+
+@layer components {
+  .bottom-line {
+    @apply border-b-[1px] border-b-[#445364];
   }
 }
 
@@ -28,3 +36,18 @@ a {
   box-sizing: border-box;
 }
 
+.background-container {
+  position: relative;
+}
+
+.background-container > :not(.background-frame) {
+  position: relative;
+}
+
+.wireframe * {
+  outline: 1px solid red !important;
+}
+
+.logo-shadow {
+  text-shadow: 0px 0 5px rgb(127, 255, 77);
+}
