@@ -4,7 +4,7 @@ import MainTitle from "../components/typography/MainTitle";
 
 const Header = ({ children, className="" }) => {
   return (
-    <header className={"bottom-line " + className}>
+    <header className={"bottom-line pb-6 " + className}>
       {children}
     </header>
   );
@@ -12,7 +12,7 @@ const Header = ({ children, className="" }) => {
 
 Header.Title = ({ children }) => {
   return (
-    <MainTitle className="pt-10">{children}</MainTitle>
+    <MainTitle>{children}</MainTitle>
   );
 }
 

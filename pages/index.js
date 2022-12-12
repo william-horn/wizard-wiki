@@ -20,7 +20,7 @@ const Home = () => {
     <Page className="bg-primary">
 
       {/* Page Header */}
-      <Header className="pb-10">
+      <Header>
         <Header.Title>
           <Container className="relative inline-block">
             <span className="relative">Welcome to&nbsp;</span>
@@ -42,7 +42,7 @@ const Home = () => {
       <nav className="flex flex-wrap justify-center gap-2 p-3 bottom-line bg-secondary">
         <Text className="font-bold underline"><Link href="/">Home</Link></Text>
         <Text>|</Text>
-        <Text className="font-bold underline"><Link href="/discover">Raven</Link></Text>
+        <Text className="font-bold underline"><Link href="/dashboard">Raven</Link></Text>
         <Text>|</Text>
         <Text className="font-bold underline"><Link href="/about">About</Link></Text>
         <Text>|</Text>
@@ -59,18 +59,18 @@ const Home = () => {
             <Container className="relative pb-3 mb-16 bottom-line">
               <Image src="/wiz-pic-2.png" width={221} height={514} className="absolute right-[100%] select-none pointer-events-none xl:block md:hidden"/>
 
-              <Title className="text-[#55ebff]">What is Raven?</Title>
+              <Title className="text-color-5">What is Raven?</Title>
               <Text className="mb-5 text-lg font-light leading-8 ml-7">
-                <span className="font-bold">Raven is a modern web application that grants the <Wizard101 link/> community access to information that you mostly can't find anywhere else.</span> 
+                <span className="font-bold">Raven is a modern web application that grants the <Wizard101 link/> community access to information that you mostly won't find anywhere else.</span> 
                 &nbsp;We primarily focus on documenting useful information such as drop rate percentages for mobs, packs, etc, but we also have sub-threads where users can post <span className="font-bold">any</span> 
                 &nbsp;interesting discovery they've made in the game that is worth sharing.
               </Text>
               <Text className="mb-5 text-lg font-light leading-8 ml-7">
-                You can think of Raven as a second <WikiLink>Wizard101 wiki</WikiLink> for advanced users. Or better yet, the MythBusters of Wizard101!
+                Raven is like a combination of social media and wikipedia exclusively for <Wizard101/>!
               </Text>
               <Container className="flex flex-row justify-end gap-4 mb-3">
                 <button className="p-2 text-base text-lg font-extrabold rounded bg-color-4 animate-bounce">
-                  Explore!
+                  <Link href="/dashboard">Explore!</Link>
                 </button>
                 <button className="p-2 text-base text-lg font-extrabold rounded bg-color-3">
                   Learn more
@@ -82,7 +82,7 @@ const Home = () => {
               <Title className="text-color-5">Why use Raven?</Title>
               <Text className="mb-5 text-lg font-light leading-8 ml-7">
                 The official <WikiLink>Wizard101 Wiki</WikiLink> is great and all, but it has a lot of shortcomings. It's great for providing quick surface-level
-                information on boss cheats, item drops, quests, spells, etc. However, they keep the technical side of the game extremely well-hidden. This is where 
+                information on boss cheats, item drops, quests, spells, etc. However, they keep the technical side of the game extremely hidden away. This is where 
                 Raven comes in.
               </Text>
               <Text className="mb-5 text-lg font-light leading-8 ml-7">
