@@ -16,4 +16,5 @@ Footer.Title = ({ children, className="" }) => {
   )
 }
 
+Footer.displayName = "Footer";
 export default Footer;

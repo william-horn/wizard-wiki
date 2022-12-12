@@ -31,4 +31,5 @@ function MyApp({ Component, pageProps }) {
   )
 }
 
+MyApp.displayName = "MyApp";
 export default MyApp

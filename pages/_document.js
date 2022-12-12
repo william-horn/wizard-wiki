@@ -19,4 +19,5 @@ const Document = () => {
   );
 };
 
+Document.displayName = "Document";
 export default Document;

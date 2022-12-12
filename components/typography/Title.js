@@ -8,4 +8,5 @@ const Title = ({ children, className="" }) => {
   );
 };
 
+Title.displayName = "Title";
 export default Title;

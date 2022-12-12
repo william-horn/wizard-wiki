@@ -8,4 +8,5 @@ const WikiLink = ({ children }) => {
   );
 };
 
+WikiLink.displayName = "WikiLink";
 export default WikiLink;

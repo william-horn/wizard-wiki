@@ -16,4 +16,5 @@ Header.Title = ({ children }) => {
   );
 }
 
+Header.displayName = "Header";
 export default Header;

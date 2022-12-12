@@ -194,4 +194,5 @@ const Home = () => {
   )
 }
 
+Home.displayName = "Home";
 export default Home;

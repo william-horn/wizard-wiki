@@ -15,4 +15,5 @@ List.Item = ({ children, className="" }) => {
   );
 }
 
+List.displayName = "List";
 export default List;

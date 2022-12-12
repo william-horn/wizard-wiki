@@ -9,4 +9,5 @@ const Page = ({ children, className="" }) => {
   );
 };
 
+Page.displayName = "Page";
 export default Page;

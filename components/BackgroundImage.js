@@ -5,14 +5,16 @@
     <BackgroundImage>
   </div>
 */
+import Image from "next/image";
 
 const BackgroundImage = ({ src, image, frame }) => {
   return (
     <div className={`background-frame w-full h-full absolute ` + frame}>
-      <img src={src} alt="background image" className={`background-image w-full h-full absolute object-cover pointer-events-none select-none ` + image}/>
+      <Image src={src} alt="background image" fill className={`background-image absolute object-cover pointer-events-none select-none ` + image}/>
     </div>
   );
 };
 
+BackgroundImage.displayName = "BackgroundImage";
 export default BackgroundImage;
 

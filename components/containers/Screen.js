@@ -9,4 +9,5 @@ const Screen = ({ children, className="" }) => {
   );
 };
 
+Screen.displayName = "Screen";
 export default Screen;

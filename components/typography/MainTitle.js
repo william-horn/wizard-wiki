@@ -7,4 +7,5 @@ const MainTitle = ({ children, className="" }) => {
   );
 };
 
+MainTitle.displayName = "MainTitle";
 export default MainTitle;

@@ -8,4 +8,5 @@ const Wizard101 = () => {
   );
 };
 
+Wizard101.displayName = "Wizard101";
 export default Wizard101;
