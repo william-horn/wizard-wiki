@@ -187,7 +187,7 @@ const Home = () => {
                 </Text>
                 <Text className="mb-10 text-lg font-light leading-8 ml-7">
                   <span className="font-bold text-color-4">A. </span>
-                  YES. Please do. If you have any experience with deb design, programming, front-end/back-end, or graphic design, don't hesitate to reach out to me.
+                  YES. Please do. If you have any experience with web design, programming, front-end/back-end, or graphic design, don't hesitate to reach out to me.
                   Your help would be very much appreciated.
                 </Text>
               </Container>
