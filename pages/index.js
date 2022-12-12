@@ -20,7 +20,7 @@ const Home = () => {
     <Page className="bg-primary">
 
       {/* Page Header */}
-      <Header>
+      <Header className="pb-10">
         <Header.Title>
           <Container className="relative inline-block">
             <span className="relative">Welcome to&nbsp;</span>
@@ -32,10 +32,10 @@ const Home = () => {
           </Container>
         </Header.Title>
 
-        <Text className="p-1 mb-5 text-center">
-          The most comprehensive media, analytical, and social website for&nbsp;
+        {/* <Text className="p-1 mb-5 text-center">
+          The most comprehensive media, analytics, and social website for&nbsp;
           <span className="underline text-color-3"><Link href="https://www.wizard101.com/">Wizard101.</Link></span>
-        </Text>
+        </Text> */}
       </Header>
 
       {/* Page Nav bar */}
@@ -50,108 +50,157 @@ const Home = () => {
       </nav>
       
       {/* Page Body */}
-      <Container className="w-full p-3 pt-10">
-        <Container className="ml-auto mr-auto xl:w-1/2 md:w-3/4 sm:w-full">
+      <Container>
+        {/* <BackgroundImage src="/wiz-pic-1.png"/> */}
 
-          <Container className="pb-3 mb-16 bottom-line">
-            <Title className="text-[#55ebff]">What is Raven?</Title>
-            <Text className="mb-5 text-lg font-light leading-8 ml-7">
-              Raven is a modern web application that allows people in the <Wizard101/> community to contribute stockpiles of in-game discoveries to our database for anyone to use. 
-              Here, users may contribute information about legitimately observed features/mechanics in the game that are not documented in the official <WikiLink>Wizard101 wiki.</WikiLink>
-              &nbsp;These contributions can range from creature drop rates, to cool damage combos, to how likely you are to get that one epic mount you want in a pack opening.
-            </Text>
-            <Text className="mb-5 text-lg font-light leading-8 ml-7">
-              Think of Raven as the MythBusters of Wizard101!
-            </Text>
-            <Container className="flex flex-row justify-end gap-4 mb-3">
-              <button className="p-2 text-base text-lg font-extrabold rounded bg-color-4 animate-bounce">
-                Explore!
-              </button>
-              <button className="p-2 text-base text-lg font-extrabold rounded bg-color-3">
-                Learn more
-              </button>
+        <Container className="w-full h-full p-3 pt-10">
+          <Container className="ml-auto mr-auto xl:w-1/2 md:w-3/4 sm:w-full">
+
+            <Container className="relative pb-3 mb-16 bottom-line">
+              <Image src="/wiz-pic-2.png" width={221} height={514} className="absolute right-[100%] select-none pointer-events-none xl:block md:hidden"/>
+
+              <Title className="text-[#55ebff]">What is Raven?</Title>
+              <Text className="mb-5 text-lg font-light leading-8 ml-7">
+                <span className="font-bold">Raven is a modern web application that grants the <Wizard101 link/> community access to information that you mostly can't find anywhere else.</span> 
+                &nbsp;We primarily focus on documenting useful information such as drop rate percentages for mobs, packs, etc, but we also have sub-threads where users can post <span className="font-bold">any</span> 
+                &nbsp;interesting discovery they've made in the game that is worth sharing.
+              </Text>
+              <Text className="mb-5 text-lg font-light leading-8 ml-7">
+                You can think of Raven as a second <WikiLink>Wizard101 wiki</WikiLink> for advanced users. Or better yet, the MythBusters of Wizard101!
+              </Text>
+              <Container className="flex flex-row justify-end gap-4 mb-3">
+                <button className="p-2 text-base text-lg font-extrabold rounded bg-color-4 animate-bounce">
+                  Explore!
+                </button>
+                <button className="p-2 text-base text-lg font-extrabold rounded bg-color-3">
+                  Learn more
+                </button>
+              </Container>
             </Container>
-          </Container>
-          
-          <Container className="pb-3 mb-16 bottom-line">
-            <Title className="text-color-5">Why use Raven?</Title>
-            <Text className="mb-5 text-lg font-light leading-8 ml-7">
-              The official <WikiLink>Wizard101 Wiki</WikiLink> is great and all, but it has a lot of shortcomings. It's great for providing quick surface-level
-              information on boss cheats, item drops, quests, spells, etc. However, they keep the technical side of the game extremely well-hidden. This is where 
-              Raven comes in.
-            </Text>
-            <Text className="mb-5 text-lg font-light leading-8 ml-7">
-              Raven aims to take all information that can be <span className="font-bold">legitimately</span> extrapolated from the game, and compile it
-              down into one place that is accessible to everyone. Such information may include:
-            </Text>
-            <List className="mb-5 ml-16">
-              <List.Item>Creature drop rates</List.Item>
-              <List.Item>Creature Statistics</List.Item>
-              <List.Item>Damage Calculations</List.Item>
-              <List.Item>Reagent Drop/Spawn Rates</List.Item>
-              <List.Item>Pack drop rates</List.Item>
-              <Text>etc...</Text>
-            </List>
-            <Text className="mb-5 leading-8 text-md ml-7">
-              All of these statistics are obtained legitimately through many trials of large sample sizes. We do not cheat, hack, or exploit the game
-              in order to get these statistics.
-            </Text>
-            <Container className="flex flex-row justify-end mb-3">
-              <button className="p-2 text-base text-lg font-extrabold rounded bg-color-3">
-                Learn more
-              </button>
+            
+            <Container className="pb-3 mb-16 bottom-line">
+              <Title className="text-color-5">Why use Raven?</Title>
+              <Text className="mb-5 text-lg font-light leading-8 ml-7">
+                The official <WikiLink>Wizard101 Wiki</WikiLink> is great and all, but it has a lot of shortcomings. It's great for providing quick surface-level
+                information on boss cheats, item drops, quests, spells, etc. However, they keep the technical side of the game extremely well-hidden. This is where 
+                Raven comes in.
+              </Text>
+              <Text className="mb-5 text-lg font-light leading-8 ml-7">
+                Raven aims to take all information that can be <span className="font-bold">legitimately</span> extrapolated from the game, and compile it
+                down into one place that is accessible to everyone. Such information may include:
+              </Text>
+              <List className="mb-10 ml-16">
+                <List.Item>Creature drop rates</List.Item>
+                <List.Item>Creature Statistics</List.Item>
+                <List.Item>Damage Calculations</List.Item>
+                <List.Item>Reagent Drop/Spawn Rates</List.Item>
+                <List.Item>Pack drop rates</List.Item>
+                <Text>etc...</Text>
+              </List>
+
+              <Container className="flex flex-wrap p-4 pl-10 pr-10 mb-10 justify-evenly">
+                <Container className="relative min-w-[125px] w-[25%] h-[100px] m-5">
+                  <Image src="/wiz-packs.png" fill className="object-cover rounded-[20px]"/>
+                </Container>
+                <Container className="relative min-w-[125px] w-[25%] h-[100px] m-5">
+                  <Image src="/critical-shot.png" fill className="object-cover rounded-[20px]"/>
+                </Container>
+                <Container className="relative min-w-[125px] w-[25%] h-[100px] m-5">
+                  <Image src="/dungeon-pic-1.jpg" fill className="object-cover rounded-[20px]"/>
+                </Container>
+              </Container>
+
+              <Text className="mb-5 leading-8 text-md ml-7">
+                All of these statistics are obtained legitimately through many trials of large sample sizes. We do not cheat, hack, or exploit the game
+                in order to get these statistics.
+              </Text>
+              <Container className="flex flex-row justify-end mb-3">
+                <button className="p-2 text-base text-lg font-extrabold rounded bg-color-3">
+                  Learn more
+                </button>
+              </Container>
             </Container>
-          </Container>
 
-          <Container className="pb-3 mb-16 bottom-line">
-            <Title className="text-color-5">What ISN'T Raven?</Title>
-            <List className="ml-3">
-              <List.Item className="mb-5 text-lg font-light leading-8 ml-7">
-                Raven is <span className="font-bold">NOT</span> a cheating, hacking, or exploiting site. We are by the books. Faulty game mechanics in Wizard101
-                may be discussed and shared here, but only as a method to help report the issue to legitimate Wizard101 admins.
-              </List.Item>
-              <List.Item className="mb-5 text-lg font-light leading-8 ml-7">
-                We are <span className="font-bold">NOT</span> affiliated with the Wizard101 team or Kingsisle corporation in <span className="font-bold">any way.</span> You
-                should not share any of your Wizard101 account details on this website or anywhere else.
-              </List.Item>
-              <List.Item className="mb-5 text-lg font-light leading-8 ml-7">
-                We are <span className="font-bold">NOT</span> a replacement for the official <WikiLink>Wizard101 Wiki</WikiLink>. We may use data from the official wiki, but 
-                our goal is only to <span className="font-bold">add</span> new types of information that the original wiki does not document.
-              </List.Item>
-            </List>
-            <Container className="flex flex-row justify-end mb-3">
-              <button className="p-2 text-base text-lg font-extrabold rounded bg-color-3">
-                Learn more
-              </button>
+            <Container className="pb-3 mb-16 bottom-line">
+              <Title className="text-color-5">What ISN'T Raven?</Title>
+              <List className="ml-3">
+                <List.Item className="mb-5 text-lg font-light leading-8 ml-7">
+                  Raven is <span className="font-bold">NOT</span> a cheating, hacking, or exploiting site. We are by the books. Faulty game mechanics in Wizard101
+                  may be discussed and shared here, but only as a method to help report the issue to legitimate Wizard101 admins.
+                </List.Item>
+                <List.Item className="mb-5 text-lg font-light leading-8 ml-7">
+                  We are <span className="font-bold">NOT</span> affiliated with the Wizard101 team or Kingsisle corporation in <span className="font-bold">any way.</span> You
+                  should not share any of your Wizard101 account details on this website or anywhere else.
+                </List.Item>
+                <List.Item className="mb-5 text-lg font-light leading-8 ml-7">
+                  We are <span className="font-bold">NOT</span> a replacement for the official <WikiLink>Wizard101 Wiki</WikiLink>. We may use data from the official wiki, but 
+                  our goal is only to <span className="font-bold">add</span> new types of information that the original wiki does not document.
+                </List.Item>
+              </List>
+              <Container className="flex flex-row justify-end mb-3">
+                <button className="p-2 text-base text-lg font-extrabold rounded bg-color-3">
+                  Learn more
+                </button>
+              </Container>
             </Container>
-          </Container>
 
-          <Container className="pb-3 mb-16 bottom-line">
-            <Title className="text-color-5">FAQ</Title>
-            <Text className="mb-5 text-lg font-bold leading-8 ml-7">
-              <span className="text-color-3">Q. </span>
-              Why can't I find any information on what I'm looking for?
-            </Text>
-            <Text className="mb-5 text-lg font-light leading-8 ml-7">
-              <span className="font-bold text-color-4">A. </span>
-              This website is still really new and we're working hard to populate it with accurate information which may take a long time to get. Just stay tuned!
-            </Text>
+            <Container className="pb-3 mb-16 bottom-line">
+              <Title className="text-color-5">FAQ</Title>
 
-            <Text className="mb-5 text-lg font-bold leading-8 ml-7">
-              <span className="text-color-3">Q. </span>
-              Why aren't some links working?
-            </Text>
-            <Text className="mb-5 text-lg font-light leading-8 ml-7">
-              <span className="font-bold text-color-4">A. </span>
-              Because website is new
-            </Text>
-            <Container className="flex flex-row justify-end mb-3">
-              <button className="p-2 text-base text-lg font-extrabold rounded bg-color-3">
-                Learn more
-              </button>
+              <Container className="left-line">
+                <Text className="mb-5 text-lg font-bold leading-8 ml-7">
+                  <span className="text-color-3">Q. </span>
+                  Why can't I find any information on what I'm looking for?
+                </Text>
+                <Text className="mb-10 text-lg font-light leading-8 ml-7">
+                  <span className="font-bold text-color-4">A. </span>
+                  This website is still really new and we're working hard to populate it with accurate information which may take a long time to get. Just stay tuned!
+                </Text>
+              </Container>
+
+              <Container className="left-line">
+                <Text className="mb-5 text-lg font-bold leading-8 ml-7">
+                  <span className="text-color-3">Q. </span>
+                  Why aren't some links working?
+                </Text>
+                <Text className="mb-10 text-lg font-light leading-8 ml-7">
+                  <span className="font-bold text-color-4">A. </span>
+                  As of 12/12/2022, there are no working links on this home page because the pages have not been created yet.
+                </Text>
+              </Container>
+
+              <Container className="left-line">
+                <Text className="mb-5 text-lg font-bold leading-8 ml-7">
+                  <span className="text-color-3">Q. </span>
+                  Who created this site?
+                </Text>
+                <Text className="mb-10 text-lg font-light leading-8 ml-7">
+                  <span className="font-bold text-color-4">A. </span>
+                  Just me - an ordinary Wizard101 player. As of now I am the only person working this website, so progress may be slow.
+                </Text>
+              </Container>
+
+              <Container className="left-line">
+                <Text className="mb-5 text-lg font-bold leading-8 ml-7">
+                  <span className="text-color-3">Q. </span>
+                  Can I contribute to the development of this site?
+                </Text>
+                <Text className="mb-10 text-lg font-light leading-8 ml-7">
+                  <span className="font-bold text-color-4">A. </span>
+                  YES. Please do. If you have any experience with deb design, programming, front-end/back-end, or graphic design, don't hesitate to reach out to me.
+                  Your help would be very much appreciated.
+                </Text>
+              </Container>
+
+              <Container className="flex flex-row justify-end mb-3">
+                <button className="p-2 text-base text-lg font-extrabold rounded bg-color-3">
+                  Learn more
+                </button>
+              </Container>
             </Container>
-          </Container>
 
+
+          </Container>
 
         </Container>
       </Container>
@@ -162,19 +211,21 @@ const Home = () => {
 
           <Container className="p-3 pt-0 left-line">
             <Title className="p-0">Contributors</Title>
-            <Text>William J. Horn</Text>
+            <Text><span className="font-bold">Lead dev: </span>William J. Horn</Text>
           </Container>
 
           <Container className="p-3 pt-0 left-line">
             <Title className="p-0">Contact</Title>
-            <Text>Phone: <span className="text-red-700">(not available)</span></Text>
-            <Text>Email: <span className="underline">williamjosephhorn@gmail.com</span></Text>
+            <Text><span className="font-bold">Phone:</span> <span className="underline">(not available)</span></Text>
+            <Text><span className="font-bold">Email:</span> <span className="underline">williamjosephhorn@gmail.com</span></Text>
+            <Text><span className="font-bold">Discord:</span> <span className="underline">Equality#6453</span></Text>
+            <Text><span className="font-bold">Github:</span> <span className="underline"><Link href="https://github.com/william-horn">https://github.com/william-horn</Link></span></Text>
           </Container>
 
           <Container className="p-3 pt-0 left-line">
-            <Title className="p-0">Other Shit</Title>
-            <Text>Me</Text>
-            <Text>Myself</Text>
+            <Title className="p-0">Coming soon</Title>
+            <Text>Item 1</Text>
+            <Text>Item 2</Text>
           </Container>
 
         </Container>
