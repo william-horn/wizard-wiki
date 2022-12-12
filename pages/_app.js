@@ -3,7 +3,7 @@ import { AppProvider } from '../providers';
 import { useLocalStorage } from '../hooks/useLocalStorage';
 import Enum from '../enums';
 import { useEffect, useState } from 'react';
-import MainLayout from '../components/layouts/MainLayout';
+import HeaderFooterLayout from '../components/layouts/HeaderFooterLayout';
 import Screen from '../components/containers/Screen';
 import Container from '../components/containers/Container';
 
@@ -25,8 +25,10 @@ function MyApp({ Component, pageProps }) {
     <AppProvider value={{
       // top level state vars
     }}>
-      <Container className="min-h-screen">
-        <Component {...pageProps} />
+      <Container className="min-h-screen bg-primary">
+        <HeaderFooterLayout>
+          <Component {...pageProps} />
+        </HeaderFooterLayout>
       </Container>
     </AppProvider>
   )
