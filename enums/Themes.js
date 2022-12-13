@@ -1,11 +1,18 @@
 
-import EnumItem from './EnumItem';
+import { enumify, EnumCollection } from './Enum';
 const keyPrefix = 'theme-';
 
-const Themes = {
-    Default: new EnumItem('default', 'the default theme'),
-    Test: new EnumItem('test', 'testing theme')
-}
+const Themes = new EnumCollection({
+    Default: enumify({
+      value: 'default',
+      info: 'The default theme name',
+    }),
+
+    Test: enumify({
+      value: 'test',
+      info: 'A test theme'
+    })
+})
 
 for (const item in Themes) {
   Themes[item].value = keyPrefix + Themes[item].value;

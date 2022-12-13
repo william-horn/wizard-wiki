@@ -1,6 +1,5 @@
-import Container from "../components/containers/Container";
-import Text from "../components/typography/Text";
-import Title from "../components/typography/Title";
+
+import Title from "../../typography/Title";
 
 const Footer = ({ children, className="" }) => {
   return (
@@ -16,5 +15,4 @@ Footer.Title = ({ children, className="" }) => {
   )
 }
 
-Footer.displayName = "Footer";
 export default Footer;

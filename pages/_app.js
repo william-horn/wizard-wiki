@@ -3,9 +3,9 @@ import { AppProvider } from '../providers';
 import { useLocalStorage } from '../hooks/useLocalStorage';
 import Enum from '../enums';
 import { useEffect, useState } from 'react';
-import HeaderFooterLayout from '../components/layouts/HeaderFooterLayout';
 import Screen from '../components/containers/Screen';
 import Container from '../components/containers/Container';
+import LayoutController from '../components/layouts';
 
 if (typeof window !== 'undefined') {
   const allEl = window.document.querySelector("body");
@@ -26,9 +26,9 @@ function MyApp({ Component, pageProps }) {
       // top level state vars
     }}>
       <Container className="min-h-screen bg-primary">
-        <HeaderFooterLayout>
+        <LayoutController>
           <Component {...pageProps} />
-        </HeaderFooterLayout>
+        </LayoutController>
       </Container>
     </AppProvider>
   )

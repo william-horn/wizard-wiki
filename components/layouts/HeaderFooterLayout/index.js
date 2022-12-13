@@ -1,16 +1,17 @@
 
-import Container from '../containers/Container';
-import Screen from '../containers/Screen';
-import Header from '../../pages/Header';
+import Container from '../../containers/Container';
+import Screen from '../../containers/Screen';
 import Image from 'next/image';
-import Text from '../typography/Text';
-import Footer from '../../pages/Footer';
-import Title from '../typography/Title';
+import MainTitle from '../../typography/MainTitle';
+import Text from '../../typography/Text';
+import Title from '../../typography/Title';
 import Link from 'next/link';
+import Header from './Header';
+import Footer from './Footer';
 import { useState, useRef } from 'react';
-import { useAppContext } from '../../providers/AppProvider';
-import Enum from '../../enums';
-import NavLink from '../buttons/NavLink';
+import { useAppContext } from '../../../providers/AppProvider';
+import Enum from '../../../enums';
+import NavLink from '../../buttons/NavLink';
 import { useRouter } from 'next/router';
 import Head from 'next/head';
 import { v4 as uuidv4 } from 'uuid';
@@ -22,23 +23,17 @@ const navPages = [
   Enum.Pages.Donate
 ]
 
-const HeaderFooterLayout = ({ children }) => {
+const HeaderFooterLayout = ({ children, currentPage }) => {
   const router = useRouter();
-  let currentPage;
 
-  for (let page in Enum.Pages) {
-    if (Enum.Pages[page].url === router.pathname) {
-      currentPage = Enum.Pages[page];
-    }
-  }
-
-  const renderHeaderContent = () => {
-    if (currentPage === Enum.Pages.Explore) {
-      return <></>;
-    }
-
-    return (
+  return (
+    <Container className="bg-primary">
+      <Head>
+        <title>{currentPage.title}</title>
+      </Head>
+      {/* Page Header */}
       <Header>
+        {console.log('hello im a silly header')}
         <Header.Title>
           <Container className="relative inline-block">
             <span className="relative">Welcome to&nbsp;</span>
@@ -55,16 +50,6 @@ const HeaderFooterLayout = ({ children }) => {
           <span className="underline text-color-3"><Link href="https://www.wizard101.com/">Wizard101.</Link></span>
         </Text> */}
       </Header>
-    );
-  }
-
-  return (
-    <Container className="bg-primary">
-      <Head>
-        <title>{currentPage.title}</title>
-      </Head>
-      {/* Page Header */}
-      {renderHeaderContent()}
 
       {/* Page Nav bar */}
       {/* !issue with generating nav links here; component fragment doesn't have a key prop */}
