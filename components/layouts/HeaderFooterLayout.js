@@ -24,21 +24,20 @@ const navPages = [
 
 const HeaderFooterLayout = ({ children }) => {
   const router = useRouter();
+  let currentPage;
 
-  const getCurrentPage = () => {
-    for (let page in Enum.Pages) {
-      if (Enum.Pages[page].url === router.pathname) {
-        return Enum.Pages[page];
-      }
+  for (let page in Enum.Pages) {
+    if (Enum.Pages[page].url === router.pathname) {
+      currentPage = Enum.Pages[page];
     }
   }
 
-  return (
-    <Container className="bg-primary">
-      <Head>
-        <title>{getCurrentPage().title}</title>
-      </Head>
-      {/* Page Header */}
+  const renderHeaderContent = () => {
+    if (currentPage === Enum.Pages.Explore) {
+      return <></>;
+    }
+
+    return (
       <Header>
         <Header.Title>
           <Container className="relative inline-block">
@@ -56,6 +55,16 @@ const HeaderFooterLayout = ({ children }) => {
           <span className="underline text-color-3"><Link href="https://www.wizard101.com/">Wizard101.</Link></span>
         </Text> */}
       </Header>
+    );
+  }
+
+  return (
+    <Container className="bg-primary">
+      <Head>
+        <title>{currentPage.title}</title>
+      </Head>
+      {/* Page Header */}
+      {renderHeaderContent()}
 
       {/* Page Nav bar */}
       {/* !issue with generating nav links here; component fragment doesn't have a key prop */}

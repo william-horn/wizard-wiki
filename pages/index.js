@@ -29,8 +29,9 @@ const Home = () => {
             <Title className="text-color-5">What is Raven?</Title>
             <Text className="mb-5 text-lg font-light leading-8 ml-7">
               <span className="font-bold">Raven is a modern <Wizard101 link/> website that grants the community access to information that you mostly won't find anywhere else.</span> 
-              &nbsp;We primarily focus on documenting useful information such as drop rate percentages for mobs, packs, etc, but we also have sub-threads where users can post <span className="font-bold">any</span> 
-              &nbsp;interesting discovery they've made in the game that is worth sharing.
+              &nbsp;We primarily focus on calculating drop rate percentages for mobs, packs, etc. but anything in Wizard101 that is RNG-based we can provide 
+              a probability for. We also have categories where users can post <span className="font-bold">any</span> 
+              &nbsp;interesting discovery they've made in the game that is worth sharing, whether technical or not.
             </Text>
             <Text className="mb-5 text-lg font-light leading-8 ml-7">
               Raven is like a combination of social media and wikipedia exclusively for <Wizard101/>!
@@ -58,7 +59,7 @@ const Home = () => {
             </Text>
             <List className="mb-10 ml-16">
               <List.Item>Creature drop rates</List.Item>
-              <List.Item>Creature Statistics</List.Item>
+              <List.Item>Advanced Creature Stats <span className="text-sm font-bold">(critical, pip chance, etc...)</span></List.Item>
               <List.Item>Damage Calculations</List.Item>
               <List.Item>Reagent Drop/Spawn Rates</List.Item>
               <List.Item>Pack drop rates</List.Item>
@@ -82,7 +83,7 @@ const Home = () => {
               in order to get these statistics.
             </Text>
             <Container className="flex flex-row justify-end mb-3">
-              <button className="p-2 text-base text-lg font-extrabold rounded bg-secondary">
+              <button className="p-2 text-base text-lg font-extrabold transition-all rounded bg-secondary hover:px-4">
                 Learn more
               </button>
             </Container>
@@ -105,7 +106,7 @@ const Home = () => {
               </List.Item>
             </List>
             <Container className="flex flex-row justify-end mb-3">
-              <button className="p-2 text-base text-lg font-extrabold rounded bg-secondary">
+              <button className="p-2 text-base text-lg font-extrabold transition-all rounded bg-secondary hover:px-4">
                 Learn more
               </button>
             </Container>
@@ -160,7 +161,7 @@ const Home = () => {
             </Container>
 
             <Container className="flex flex-row justify-end mb-3">
-              <button className="p-2 text-base text-lg font-extrabold rounded bg-secondary">
+              <button className="p-2 text-base text-lg font-extrabold transition-all rounded bg-secondary hover:px-4">
                 Learn more
               </button>
             </Container>
