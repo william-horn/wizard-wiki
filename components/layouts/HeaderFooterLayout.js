@@ -12,6 +12,7 @@ import { useAppContext } from '../../providers/AppProvider';
 import Enum from '../../enums';
 import NavLink from '../buttons/NavLink';
 import { useRouter } from 'next/router';
+import Head from 'next/head';
 import { v4 as uuidv4 } from 'uuid';
 
 const navPages = [
@@ -24,8 +25,19 @@ const navPages = [
 const HeaderFooterLayout = ({ children }) => {
   const router = useRouter();
 
+  const getCurrentPage = () => {
+    for (let page in Enum.Pages) {
+      if (Enum.Pages[page].url === router.pathname) {
+        return Enum.Pages[page];
+      }
+    }
+  }
+
   return (
     <Container className="bg-primary">
+      <Head>
+        <title>{getCurrentPage().title}</title>
+      </Head>
       {/* Page Header */}
       <Header>
         <Header.Title>
@@ -46,6 +58,7 @@ const HeaderFooterLayout = ({ children }) => {
       </Header>
 
       {/* Page Nav bar */}
+      {/* !issue with generating nav links here; component fragment doesn't have a key prop */}
       <nav className="flex flex-wrap justify-center gap-2 p-3 bottom-line bg-secondary">
         {
           navPages.map((page, index) =>

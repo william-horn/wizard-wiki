@@ -28,7 +28,7 @@ const Home = () => {
 
             <Title className="text-color-5">What is Raven?</Title>
             <Text className="mb-5 text-lg font-light leading-8 ml-7">
-              <span className="font-bold">Raven is a modern web application that grants the <Wizard101 link/> community access to information that you mostly won't find anywhere else.</span> 
+              <span className="font-bold">Raven is a modern <Wizard101 link/> website that grants the community access to information that you mostly won't find anywhere else.</span> 
               &nbsp;We primarily focus on documenting useful information such as drop rate percentages for mobs, packs, etc, but we also have sub-threads where users can post <span className="font-bold">any</span> 
               &nbsp;interesting discovery they've made in the game that is worth sharing.
             </Text>
@@ -36,11 +36,11 @@ const Home = () => {
               Raven is like a combination of social media and wikipedia exclusively for <Wizard101/>!
             </Text>
             <Container className="flex flex-row justify-end gap-4 mb-3">
-              <button className="p-2 text-base text-lg font-extrabold rounded bg-color-4 animate-bounce">
-                <Link href="/dashboard">Explore!</Link>
+              <button className="p-2 text-base text-lg font-extrabold transition-all rounded bg-color-4 hover:bg-[#35a66e] hover:px-4">
+                <Link href={Enum.Pages.Explore.url}>Explore!</Link>
               </button>
-              <button className="p-2 text-base text-lg font-extrabold rounded bg-secondary">
-                Learn more
+              <button className="p-2 text-base text-lg font-extrabold transition-all rounded bg-secondary hover:px-4">
+                <Link href={Enum.Pages.About.url}>Learn more</Link>
               </button>
             </Container>
           </Container>
