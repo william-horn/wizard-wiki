@@ -7,10 +7,22 @@ import Text from '../typography/Text';
 import Footer from '../../pages/Footer';
 import Title from '../typography/Title';
 import Link from 'next/link';
+import { useState, useRef } from 'react';
 import { useAppContext } from '../../providers/AppProvider';
+import Enum from '../../enums';
+import NavLink from '../buttons/NavLink';
+import { useRouter } from 'next/router';
+import { v4 as uuidv4 } from 'uuid';
+
+const navPages = [
+  Enum.Pages.Home,
+  Enum.Pages.Explore,
+  Enum.Pages.About,
+  Enum.Pages.Donate
+]
 
 const HeaderFooterLayout = ({ children }) => {
-  
+  const router = useRouter();
 
   return (
     <Container className="bg-primary">
@@ -22,8 +34,8 @@ const HeaderFooterLayout = ({ children }) => {
             {/* <Image className="absolute pointer-events-none select-none top-[-42px] left-[-4%]" src="/wizard-hat.png" alt="wizard hat" width={75} height={65}/> */}
           </Container>
           <Container className="relative inline-block">
-            <span className="relative z-10 text-primary logo-shadow">RaVen</span>
-            <Image className="absolute pointer-events-none select-none top-[-25%] left-[60%] logo-image" src="/logo2.png" alt="logo" width={75} height={75}/>
+            <span className="relative z-10 text-primary logo-shadow">Raven</span>
+            <Image className="absolute pointer-events-none select-none top-[-25%] left-[60%] logo-image" src="/logo3.png" alt="logo" width={75} height={75}/>
           </Container>
         </Header.Title>
 
@@ -35,13 +47,19 @@ const HeaderFooterLayout = ({ children }) => {
 
       {/* Page Nav bar */}
       <nav className="flex flex-wrap justify-center gap-2 p-3 bottom-line bg-secondary">
-        <Text className="font-bold underline"><Link href="/">Home</Link></Text>
-        <Text>|</Text>
-        <Text className="font-bold underline"><Link href="/discover">Explore</Link></Text>
-        <Text>|</Text>
-        <Text className="font-bold underline"><Link href="/about">About</Link></Text>
-        <Text>|</Text>
-        <Text className="font-bold underline"><Link href="/donate">Donate</Link></Text>
+        {
+          navPages.map((page, index) =>
+            <>
+              <NavLink
+              key={uuidv4()}
+              url={page.url} 
+              currentUrl={router.pathname}>
+                {page.name}
+              </NavLink>
+              {index < navPages.length - 1 && <Text>|</Text>}
+            </>
+          )
+        }
       </nav>
       
       <Container className="min-h-screen">

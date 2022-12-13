@@ -5,7 +5,7 @@ import Header from "../Header";
 import Link from "next/link";
 import Text from "../../components/typography/Text";
 
-const Dashboard = () => {
+const Explore = () => {
   return (
     <>
       <Text>Hello, world!</Text>
@@ -13,5 +13,5 @@ const Dashboard = () => {
   );
 };
 
-export default Dashboard;
+export default Explore;
 

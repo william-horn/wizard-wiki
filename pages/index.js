@@ -24,7 +24,7 @@ const Home = () => {
         <Container className="ml-auto mr-auto xl:w-1/2 md:w-3/4 sm:w-full">
 
           <Container className="relative pb-3 mb-16 bottom-line">
-            <Image src="/wiz-pic-2.png" width={221} height={514} className="absolute right-[100%] select-none pointer-events-none xl:block md:hidden"/>
+            <Image alt="wizard picture" src="/wiz-pic-2.png" width={221} height={514} className="absolute right-[100%] select-none pointer-events-none xl:block md:hidden"/>
 
             <Title className="text-color-5">What is Raven?</Title>
             <Text className="mb-5 text-lg font-light leading-8 ml-7">
@@ -39,7 +39,7 @@ const Home = () => {
               <button className="p-2 text-base text-lg font-extrabold rounded bg-color-4 animate-bounce">
                 <Link href="/dashboard">Explore!</Link>
               </button>
-              <button className="p-2 text-base text-lg font-extrabold rounded bg-color-3">
+              <button className="p-2 text-base text-lg font-extrabold rounded bg-secondary">
                 Learn more
               </button>
             </Container>
@@ -67,13 +67,13 @@ const Home = () => {
 
             <Container className="flex flex-wrap p-4 pl-10 pr-10 mb-10 justify-evenly">
               <Container className="relative min-w-[125px] w-[25%] h-[100px] m-5">
-                <Image src="/wiz-packs.png" fill className="object-cover rounded-[20px]"/>
+                <Image alt="game packs" src="/wiz-packs.png" fill className="object-cover rounded-[20px]"/>
               </Container>
               <Container className="relative min-w-[125px] w-[25%] h-[100px] m-5">
-                <Image src="/critical-shot.png" fill className="object-cover rounded-[20px]"/>
+                <Image alt="spell critical" src="/critical-shot.png" fill className="object-cover rounded-[20px]"/>
               </Container>
               <Container className="relative min-w-[125px] w-[25%] h-[100px] m-5">
-                <Image src="/dungeon-pic-1.jpg" fill className="object-cover rounded-[20px]"/>
+                <Image alt="wizard101 dungeon" src="/dungeon-pic-1.jpg" fill className="object-cover rounded-[20px]"/>
               </Container>
             </Container>
 
@@ -82,7 +82,7 @@ const Home = () => {
               in order to get these statistics.
             </Text>
             <Container className="flex flex-row justify-end mb-3">
-              <button className="p-2 text-base text-lg font-extrabold rounded bg-color-3">
+              <button className="p-2 text-base text-lg font-extrabold rounded bg-secondary">
                 Learn more
               </button>
             </Container>
@@ -105,7 +105,7 @@ const Home = () => {
               </List.Item>
             </List>
             <Container className="flex flex-row justify-end mb-3">
-              <button className="p-2 text-base text-lg font-extrabold rounded bg-color-3">
+              <button className="p-2 text-base text-lg font-extrabold rounded bg-secondary">
                 Learn more
               </button>
             </Container>
@@ -160,7 +160,7 @@ const Home = () => {
             </Container>
 
             <Container className="flex flex-row justify-end mb-3">
-              <button className="p-2 text-base text-lg font-extrabold rounded bg-color-3">
+              <button className="p-2 text-base text-lg font-extrabold rounded bg-secondary">
                 Learn more
               </button>
             </Container>

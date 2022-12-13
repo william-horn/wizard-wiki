@@ -11,6 +11,7 @@ module.exports = {
         'color-3': '#bb32bb',
         'color-4': '#2d9361',
         'color-5': '#55ebff',
+        'color-6': '#445364',
       },
       backgroundColor: {
         skin: {

@@ -1,10 +1,12 @@
 
 import Themes from "./Themes";
 import StorageKeys from "./StorageKeys";
+import Pages from './Pages';
 
 const Enum = {
-    Themes,
-    StorageKeys
+  Pages,
+  Themes,
+  StorageKeys
 };
 
 export default Enum;
