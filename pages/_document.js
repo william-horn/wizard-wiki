@@ -6,6 +6,7 @@ const Document = () => {
     <Html>
       <Head>
         <meta name="author" content="William J. Horn" />
+        <meta name="keywords" content="wizard101, wiki, w101, drop rate, critical rate, packs, pack drop rate"/>
         <meta
           name="description"
           content="Coming soon"

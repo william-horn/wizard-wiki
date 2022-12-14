@@ -96,16 +96,18 @@ const HeaderFooterLayout = ({ children }) => {
 
           <Container className="p-3 pt-0 left-line">
             <Title className="p-0">Contact</Title>
-            <Text><span className="font-bold">Phone:</span> <span className="underline">(not available)</span></Text>
+            <Text><span className="font-bold">Phone:</span> <span className="underline">(not yet available)</span></Text>
             <Text><span className="font-bold">Email:</span> <span className="underline">williamjosephhorn@gmail.com</span></Text>
             <Text><span className="font-bold">Discord:</span> <span className="underline">Equality#6453</span></Text>
             <Text><span className="font-bold">Github:</span> <span className="underline"><Link href="https://github.com/william-horn">https://github.com/william-horn</Link></span></Text>
           </Container>
 
           <Container className="p-3 pt-0 left-line">
-            <Title className="p-0">Coming soon</Title>
-            <Text>Item 1</Text>
-            <Text>Item 2</Text>
+            <Title className="p-0">Social</Title>
+            <Text><span className="font-bold">Instagram</span> <span className="underline">(not yet available)</span></Text>
+            <Text><span className="font-bold">Twitter</span> <span className="underline">(not yet available)</span></Text>
+            <Text><span className="font-bold">Facebook</span> <span className="underline">(not yet available)</span></Text>
+            <Text><span className="font-bold">YouTube</span> <span className="underline">(not yet available)</span></Text>
           </Container>
 
         </Container>

@@ -12,6 +12,7 @@ import Title from '../components/typography/Title';
 import Wizard101 from '../components/typography/Wizard101';
 import WikiLink from '../components/typography/WikiLink';
 import List from '../components/typography/List';
+import WizardBannerImg from '../public/wiz-pic-2.png';
 
 const Home = () => {
   return (
@@ -22,7 +23,9 @@ const Home = () => {
         <Container className="ml-auto mr-auto xl:w-1/2 md:w-3/4 sm:w-full">
 
           <Container className="relative pb-3 mb-16 bottom-line">
-            <Image alt="wizard picture" src="/wiz-pic-2.png" width={221} height={514} className="absolute right-[100%] select-none pointer-events-none xl:block md:hidden"/>
+            <Container className="absolute w-[230px] h-[472px] right-[100%]">
+              <Image priority alt="wizard picture" src={WizardBannerImg} fill className="pointer-events-none select-none xl:block md:hidden"/>
+            </Container>
 
             <Title className="text-color-5">What is Raven?</Title>
             <Text className="mb-5 text-lg font-light leading-8 ml-7">
@@ -66,13 +69,13 @@ const Home = () => {
 
             <Container className="flex flex-wrap p-4 pl-10 pr-10 mb-10 justify-evenly">
               <Container className="relative min-w-[125px] w-[25%] h-[100px] m-5">
-                <Image alt="game packs" src="/wiz-packs.png" fill className="object-cover rounded-[20px]"/>
+                <Image alt="game packs" src="/wiz-packs.png" fill sizes="(max-width: 1000px) 200px 200px" className="object-cover rounded-[20px]"/>
               </Container>
               <Container className="relative min-w-[125px] w-[25%] h-[100px] m-5">
-                <Image alt="spell critical" src="/critical-shot.png" fill className="object-cover rounded-[20px]"/>
+                <Image alt="spell critical" src="/critical-shot.png" fill sizes="(max-width: 1000px) 200px 200px" className="object-cover rounded-[20px]"/>
               </Container>
               <Container className="relative min-w-[125px] w-[25%] h-[100px] m-5">
-                <Image alt="wizard101 dungeon" src="/dungeon-pic-1.jpg" fill className="object-cover rounded-[20px]"/>
+                <Image alt="wizard101 dungeon" src="/dungeon-pic-1.jpg" fill sizes="(max-width: 1000px) 200px 200px" className="object-cover rounded-[20px]"/>
               </Container>
             </Container>
 
