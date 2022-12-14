@@ -1,31 +1,19 @@
 
 import Container from '../../containers/Container';
-import Screen from '../../containers/Screen';
 import Image from 'next/image';
-import MainTitle from '../../typography/MainTitle';
 import Text from '../../typography/Text';
 import Title from '../../typography/Title';
 import Link from 'next/link';
 import Header from './Header';
 import Footer from './Footer';
-import { useState, useRef } from 'react';
-import { useAppContext } from '../../../providers/AppProvider';
 import Enum from '../../../enums';
-import NavLink from '../../buttons/NavLink';
-import { useRouter } from 'next/router';
 import Head from 'next/head';
-import { v4 as uuidv4 } from 'uuid';
+import Navbar from './Navbar';
+import { useAppContext } from '../../../providers/AppProvider';
 
-const navPages = [
-  Enum.Pages.Home,
-  Enum.Pages.Explore,
-  Enum.Pages.About,
-  Enum.Pages.Donate
-]
-
-const HeaderFooterLayout = ({ children, currentPage }) => {
-  const router = useRouter();
-
+const HeaderFooterLayout = ({ children }) => {
+  const { currentPage } = useAppContext();
+  
   return (
     <Container className="bg-primary">
       <Head>
@@ -33,7 +21,6 @@ const HeaderFooterLayout = ({ children, currentPage }) => {
       </Head>
       {/* Page Header */}
       <Header>
-        {console.log('hello im a silly header')}
         <Header.Title>
           <Container className="relative inline-block">
             <span className="relative">Welcome to&nbsp;</span>
@@ -53,27 +40,13 @@ const HeaderFooterLayout = ({ children, currentPage }) => {
 
       {/* Page Nav bar */}
       {/* !issue with generating nav links here; component fragment doesn't have a key prop */}
-      <nav className="flex flex-wrap justify-center gap-2 p-3 bottom-line bg-secondary">
-        {
-          navPages.map((page, index) =>
-            <>
-              <NavLink
-              key={uuidv4()}
-              url={page.url} 
-              currentUrl={router.pathname}>
-                {page.name}
-              </NavLink>
-              {index < navPages.length - 1 && <Text>|</Text>}
-            </>
-          )
-        }
-      </nav>
+      <Navbar/>
       
       <Container className="min-h-screen">
         {children}
       </Container>
 
-      <Footer className="pb-10 top-line">
+      <Footer add="pb-10 top-line">
         <Footer.Title className="p-4 text-center">Reach Out</Footer.Title>
         <Container className="flex flex-wrap items-start justify-start gap-12 p-4 pb-10 sm:justify-between md:justify-center lg:justify-center xl:justify-center">
 

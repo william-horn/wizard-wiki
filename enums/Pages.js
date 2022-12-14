@@ -8,30 +8,9 @@ import { enumify, EnumCollection } from './Enum';
   'url' - url location of page
 */
 
-/*
-Make a "layout switcher" component in the future that will use different layouts depending on the 
-current page. Also make components of those layouts selectable.
-
-Ex:
-
-1)
-<LayoutSwitcher>
-  <App>
-</LayoutSwitcher>
-
-2)
-import Layouts from '...';
-
-const LayoutSwitcher = () => {
-
-
-}
-
-*/
-
 const pageItemPrototypes = {
-  excludes: function(componentName) {
-    if (!this.layout.excludes) {
+  excludes: function(componentName, override) {
+    if (!this.layout.excludes || override) {
       return false;
     }
 
@@ -59,7 +38,7 @@ const Pages = new EnumCollection({
     title: 'About',
     name: 'About',
     url: '/about',
-    layout: { name: 'HeaderFooterLayout', excludes: { header: true }}
+    layout: 'HeaderFooterLayout',
   }),
 
   Explore: new PageItem({
@@ -70,7 +49,8 @@ const Pages = new EnumCollection({
     layout: {
       name: 'HeaderFooterLayout',
       excludes: {
-        header: true
+        header: true,
+        navbar: true
       }
     }
   }),
@@ -80,7 +60,7 @@ const Pages = new EnumCollection({
     title: 'Donate',
     name: 'Donate',
     url: '/donate',
-    layout: 'HeaderFooterLayout'
+    layout: 'HeaderFooterLayout',
   }),
 
   _404: new PageItem({

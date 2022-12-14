@@ -1,16 +1,22 @@
-import MainTitle from "../../typography/MainTitle";
+import PageTitle from "../../typography/PageTitle";
+import { useAppContext } from "../../../providers/AppProvider";
+import constructClassName from "../../../lib/helpers/constructClassName";
+import React from "react";
 
-const Header = ({ children, className="" }) => {
+const Header = React.forwardRef(({ children, add, remove, override }, ref) => {
+  const { currentPage } = useAppContext();
+  if (currentPage.excludes('header', override)) return <></>;
+  
   return (
-    <header className={"bottom-line pb-6 " + className}>
+    <header ref={ref} className={constructClassName("bottom-line pb-6", {add, remove})}>
       {children}
     </header>
   );
-};
+});
 
 Header.Title = ({ children }) => {
   return (
-    <MainTitle>{children}</MainTitle>
+    <PageTitle>{children}</PageTitle>
   );
 }
 

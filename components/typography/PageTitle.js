@@ -1,5 +1,5 @@
 
-const MainTitle = ({ children, className="" }) => {
+const PageTitle = ({ children, className="" }) => {
   return (
     <h1 className={'p-8 pb-6 text-5xl font-bold text-center text-main-title ' + className}>
       {children}
@@ -7,5 +7,5 @@ const MainTitle = ({ children, className="" }) => {
   );
 };
 
-MainTitle.displayName = "MainTitle";
-export default MainTitle;
+PageTitle.displayName = "PageTitle";
+export default PageTitle;

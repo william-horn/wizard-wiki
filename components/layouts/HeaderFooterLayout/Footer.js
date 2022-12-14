@@ -1,9 +1,14 @@
 
 import Title from "../../typography/Title";
+import { useAppContext } from "../../../providers/AppProvider";
+import constructClassName from "../../../lib/helpers/constructClassName";
 
-const Footer = ({ children, className="" }) => {
+const Footer = ({ children, add, remove, override }) => {
+  const { currentPage } = useAppContext();
+  if (currentPage.excludes('footer', override)) return <></>;
+  
   return (
-    <footer className={"bg-secondary " + className}>
+    <footer className={constructClassName("bg-secondary", {add, remove})}>
       {children}
     </footer>
   );
