@@ -24,7 +24,16 @@ const Home = () => {
 
           <Container className="relative pb-3 mb-16 bottom-line">
             <Container className="absolute w-[230px] h-[472px] right-[100%]">
-              <Image priority alt="wizard picture" src={WizardBannerImg} fill className="pointer-events-none select-none xl:block md:hidden"/>
+              <Image 
+                priority 
+                alt="wizard picture" 
+                src={WizardBannerImg} 
+                fill 
+                className="pointer-events-none select-none xl:block md:hidden" 
+                sizes="(min-width: 1280px) 33vw,
+                (min-width: 1528px) 25vw,
+                (min-width: 1870px) 20vw"
+              />
             </Container>
 
             <Title className="text-color-5">What is Raven?</Title>
@@ -69,13 +78,46 @@ const Home = () => {
 
             <Container className="flex flex-wrap p-4 pl-10 pr-10 mb-10 justify-evenly">
               <Container className="relative min-w-[125px] w-[25%] h-[100px] m-5">
-                <Image alt="game packs" src="/wiz-packs.png" fill sizes="(max-width: 1000px) 200px 200px" className="object-cover rounded-[20px]"/>
+                <Image 
+                  alt="game packs" 
+                  src="/wiz-packs.png" 
+                  fill 
+                  className="object-cover rounded-[20px]"
+                  sizes="(min-width: 500px) 33vw,
+                  (min-width: 700px) 25vw,
+                  (min-width: 1000px) 20vw,
+                  (min-width: 1400px) 15vw,
+                  (min-width: 1800px) 12vw,
+                  (min-width: 1920px) 10vw"
+                />
               </Container>
               <Container className="relative min-w-[125px] w-[25%] h-[100px] m-5">
-                <Image alt="spell critical" src="/critical-shot.png" fill sizes="(max-width: 1000px) 200px 200px" className="object-cover rounded-[20px]"/>
+                <Image 
+                  alt="spell critical" 
+                  src="/critical-shot.png" 
+                  fill 
+                  className="object-cover rounded-[20px]"
+                  sizes="(min-width: 500px) 33vw,
+                  (min-width: 700px) 25vw,
+                  (min-width: 1000px) 20vw,
+                  (min-width: 1400px) 15vw,
+                  (min-width: 1800px) 12vw,
+                  (min-width: 1920px) 10vw"
+                />
               </Container>
               <Container className="relative min-w-[125px] w-[25%] h-[100px] m-5">
-                <Image alt="wizard101 dungeon" src="/dungeon-pic-1.jpg" fill sizes="(max-width: 1000px) 200px 200px" className="object-cover rounded-[20px]"/>
+                <Image 
+                  alt="wizard101 dungeon" 
+                  src="/dungeon-pic-1.jpg" 
+                  fill 
+                  className="object-cover rounded-[20px]"
+                  sizes="(min-width: 500px) 33vw,
+                  (min-width: 700px) 25vw,
+                  (min-width: 1000px) 20vw,
+                  (min-width: 1400px) 15vw,
+                  (min-width: 1800px) 12vw,
+                  (min-width: 1920px) 10vw"
+                />
               </Container>
             </Container>
 

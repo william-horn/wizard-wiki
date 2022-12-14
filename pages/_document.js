@@ -7,10 +7,8 @@ const Document = () => {
       <Head>
         <meta name="author" content="William J. Horn" />
         <meta name="keywords" content="wizard101, wiki, w101, drop rate, critical rate, packs, pack drop rate"/>
-        <meta
-          name="description"
-          content="Coming soon"
-        />
+        <meta name="description" content="Coming soon"/>
+        <meta property="og:image" content="http://euro-travel-example.com/thumbnail.jpg"></meta>
 
         <link rel="preconnect" href="https://fonts.googleapis.com"/>
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true"/>

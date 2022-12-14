@@ -115,3 +115,8 @@ a {
   0% { margin-top: calc(var(--client-height)*-1); }
   100% { margin-top: 0px; }
 }
+
+/*
+  min-width = everything ABOVE this will take effect
+  max-width = everything BELOW this will take effect
+*/
