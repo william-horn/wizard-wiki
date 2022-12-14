@@ -17,8 +17,10 @@ import { isClient } from '../lib/helpers/machineType';
 import { useEffect, useRef } from 'react';
 
 const HomeTest = () => {
+  const { width: screenWidth } = useWindowDimensions();
   return (
     <div>
+      <p className='text-white'>width: {screenWidth}</p>
       <p className="text-white">Hello world!</p>
     </div>
   );
