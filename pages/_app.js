@@ -24,20 +24,25 @@ if (typeof window !== 'undefined') {
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
   const currentPage = Enum.Pages.findByMatch('url', router.pathname) || Enum.Pages._404;
-  const lastPage = useRef(null);
+  const lastPageRef = useRef(null);
+  const lastPage = lastPageRef.current;
 
   useEffect(() => {
-    lastPage.current = currentPage;
+    lastPageRef.current = currentPage;
   });
 
-  console.log('last page: ', lastPage.current);
-  console.log('this page: ', currentPage);
+  const layoutDiff = (componentName) => {
+    return lastPage && 
+      (currentPage.excludes(componentName) !== lastPage.excludes(componentName));
+  }
 
   return (
     <AppProvider value={{
       // top level state vars
       currentPage,
-      lastPage: lastPage.current
+      lastPage,
+      firstPageLoad: lastPage === null,
+      layoutDiff
     }}>
       <Container className="min-h-screen bg-primary">
         <LayoutController>

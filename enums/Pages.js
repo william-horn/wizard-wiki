@@ -38,7 +38,7 @@ const Pages = new EnumCollection({
     title: 'About',
     name: 'About',
     url: '/about',
-    layout: 'HeaderFooterLayout',
+    layout: { name: 'HeaderFooterLayout', excludes: { header: true }}
   }),
 
   Explore: new PageItem({
@@ -50,7 +50,6 @@ const Pages = new EnumCollection({
       name: 'HeaderFooterLayout',
       excludes: {
         header: true,
-        navbar: true
       }
     }
   }),

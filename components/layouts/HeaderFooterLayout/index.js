@@ -10,9 +10,34 @@ import Enum from '../../../enums';
 import Head from 'next/head';
 import Navbar from './Navbar';
 import { useAppContext } from '../../../providers/AppProvider';
+import { useRef, useEffect } from 'react';
 
 const HeaderFooterLayout = ({ children }) => {
-  const { currentPage } = useAppContext();
+  const { currentPage, layoutDiff } = useAppContext();
+  const header = useRef(null);
+
+  useEffect(() => {
+    /* 
+      If header override is false, the current page may not have a header, in which case return.
+      If header override is true, header will always exist.
+    */
+    if (!header.current) return;
+
+    /* 
+      From here on, we know there is a difference in header visibility between pages and a transition will take place.
+    */
+
+    header.current.style.setProperty('--client-height', header.current.clientHeight + 1 + 'px'); // +1 pixel because of navbar border thickness
+
+    // If this page excludes the header, then the last page does not.
+    if (currentPage.excludes('header')) {
+      header.current.style.setProperty('--header-anim', 'hide-header');
+    } else {
+      header.current.style.setProperty('--header-anim', 'show-header');
+    }
+
+    header.current.classList.add('transition-header');
+  });
   
   return (
     <Container className="bg-primary">
@@ -20,7 +45,10 @@ const HeaderFooterLayout = ({ children }) => {
         <title>{currentPage.title}</title>
       </Head>
       {/* Page Header */}
-      <Header>
+      {/* Override should be false when we load into a page and it doesn't need a transition. */}
+      {/* If there is no last page, override should be false because there is nothing to transition from. */}
+      {/* If there is a last page, but the last page and first page both have the same header state, there is no need to transition. */}
+      <Header ref={header} override={layoutDiff('header')}>
         <Header.Title>
           <Container className="relative inline-block">
             <span className="relative">Welcome to&nbsp;</span>

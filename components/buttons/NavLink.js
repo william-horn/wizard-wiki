@@ -2,7 +2,7 @@
 import Link from "next/link";
 import Text from "../typography/Text";
 
-const NavLink = ({ children, currentUrl, url }) => {
+const NavLink = ({ children, currentUrl, url, index, length }) => {
   return (
     <Text className={"nav-link " + (url === currentUrl ? 'hover-effect' : 'hover:hover-effect')}>
       <Link href={url}>{children}</Link>

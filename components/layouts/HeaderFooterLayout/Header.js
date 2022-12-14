@@ -8,7 +8,7 @@ const Header = React.forwardRef(({ children, add, remove, override }, ref) => {
   if (currentPage.excludes('header', override)) return <></>;
   
   return (
-    <header ref={ref} className={constructClassName("bottom-line pb-6", {add, remove})}>
+    <header ref={ref} className={constructClassName("bottom-line pb-6 overflow-hidden", {add, remove})}>
       {children}
     </header>
   );
