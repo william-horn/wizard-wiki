@@ -1,24 +1,24 @@
 import '../styles/globals.css';
 import { AppProvider } from '../providers';
-import { useLocalStorage } from '../hooks/useLocalStorage';
-import Enum from '../enums';
-import { useEffect, useState, useRef } from 'react';
-import Container from '../components/containers/Container';
-import LayoutController from '../components/layouts';
-import { useRouter } from 'next/router';
+// import { useLocalStorage } from '../hooks/useLocalStorage';
+// import Enum from '../enums';
+// import { useEffect, useState, useRef } from 'react';
+// import Container from '../components/containers/Container';
+// import LayoutController from '../components/layouts';
+// import { useRouter } from 'next/router';
 
-if (typeof window !== 'undefined') {
-  const allEl = window.document.querySelector("body");
-  window.addEventListener("keydown", (event) => {
-    if (event.keyCode === 87) {
-      if (allEl.classList.contains("wireframe")) {
-        allEl.classList.remove("wireframe");
-      } else {
-        allEl.classList.add("wireframe");
-      }
-    }
-  });
-}
+// if (typeof window !== 'undefined') {
+//   const allEl = window.document.querySelector("body");
+//   window.addEventListener("keydown", (event) => {
+//     if (event.keyCode === 87) {
+//       if (allEl.classList.contains("wireframe")) {
+//         allEl.classList.remove("wireframe");
+//       } else {
+//         allEl.classList.add("wireframe");
+//       }
+//     }
+//   });
+// }
 
 // function MyApp({ Component, pageProps }) {
 //   const router = useRouter();
@@ -67,11 +67,11 @@ function MyApp({ Component, pageProps }) {
   return (
     <AppProvider value={{
     }}>
-      <Container add="min-h-screen bg-primary">
+      <div className="min-h-screen bg-primary">
         {/* <LayoutController> */}
           <Component {...pageProps} />
         {/* </LayoutController> */}
-      </Container>
+      </div>
     </AppProvider>
   )
 }
