@@ -1,8 +1,9 @@
 
-const Text = ({ children, className="" }) => {
-  return <p className={"text-base " + className}>{children}</p>
+import constructClassName from "../../lib/helpers/constructClassName";
+
+const Text = ({ children, add, remove }) => {
+  return <p className={constructClassName("text-base", {add, remove})}>{children}</p>
 };
 
-Text.displayName = "Text";
 export default Text;
 

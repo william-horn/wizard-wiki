@@ -1,8 +1,8 @@
+import constructClassName from "../../lib/helpers/constructClassName";
 
-
-const Container = ({ children, className="" }) => {
+const Container = ({ children, add, remove }) => {
   return (
-    <div className={className}>
+    <div className={constructClassName("", {add, remove})}>
       {children}
     </div>
   );

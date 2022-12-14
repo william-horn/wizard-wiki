@@ -53,7 +53,7 @@ function MyApp({ Component, pageProps }) {
       firstPageLoad: lastPage === null,
       layoutDiff
     }}>
-      <Container className="min-h-screen bg-primary">
+      <Container add="min-h-screen bg-primary">
         <LayoutController>
           <Component {...pageProps} />
         </LayoutController>

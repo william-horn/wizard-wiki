@@ -1,12 +1,12 @@
 import Text from "./Text";
+import constructClassName from "../../lib/helpers/constructClassName";
 
-const Title = ({ children, className="" }) => {
+const Title = ({ children, add, remove }) => {
   return (
-    <Text className={"title font-bold text-2xl text-white mb-3 p-2 " + className}>
+    <Text add={constructClassName("title font-bold text-2xl text-white text-center mb-3 p-2", {add, remove})}>
       {children}
     </Text>
   );
 };
 
-Title.displayName = "Title";
 export default Title;
