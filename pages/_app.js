@@ -6,19 +6,20 @@ import { useEffect, useState, useRef } from 'react';
 import Container from '../components/containers/Container';
 import LayoutController from '../components/layouts';
 import { useRouter } from 'next/router';
+import constructClassName from '../lib/helpers/constructClassName';
 
-if (typeof window !== 'undefined') {
-  const allEl = window.document.querySelector("body");
-  window.addEventListener("keydown", (event) => {
-    if (event.keyCode === 87) {
-      if (allEl.classList.contains("wireframe")) {
-        allEl.classList.remove("wireframe");
-      } else {
-        allEl.classList.add("wireframe");
-      }
-    }
-  });
-}
+// if (typeof window !== 'undefined') {
+//   const allEl = window.document.querySelector("body");
+//   window.addEventListener("keydown", (event) => {
+//     if (event.keyCode === 87) {
+//       if (allEl.classList.contains("wireframe")) {
+//         allEl.classList.remove("wireframe");
+//       } else {
+//         allEl.classList.add("wireframe");
+//       }
+//     }
+//   });
+// }
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
@@ -43,6 +44,9 @@ function MyApp({ Component, pageProps }) {
   // console.log('last page: ', lastPage && lastPage.name);
   // console.log('current page: ', currentPage.name);
   // console.log('layout diff: ', layoutDiff('header'));
+
+  console.log(constructClassName);
+  console.log(constructClassName('', {add: 'hello world'}));
 
   return (
     <AppProvider value={{
