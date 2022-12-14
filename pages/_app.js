@@ -1,11 +1,11 @@
 import '../styles/globals.css';
 import { AppProvider } from '../providers';
 // import { useLocalStorage } from '../hooks/useLocalStorage';
-// import Enum from '../enums';
-// import { useEffect, useState, useRef } from 'react';
-// import Container from '../components/containers/Container';
+import Enum from '../enums';
+import { useEffect, useState, useRef } from 'react';
+import Container from '../components/containers/Container';
 // import LayoutController from '../components/layouts';
-// import { useRouter } from 'next/router';
+import { useRouter } from 'next/router';
 
 // if (typeof window !== 'undefined') {
 //   const allEl = window.document.querySelector("body");
