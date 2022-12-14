@@ -41,13 +41,6 @@ function MyApp({ Component, pageProps }) {
       (currentPage.excludes(componentName) !== lastPage.excludes(componentName));
   }
 
-  console.log('last page: ', lastPage && lastPage.name);
-  console.log('current page: ', currentPage.name);
-  console.log('layout diff: ', layoutDiff('header'));
-
-  console.log(constructClassName);
-  console.log(constructClassName('', {add: 'hello world'}));
-
   return (
     <AppProvider value={{
       // top level state vars

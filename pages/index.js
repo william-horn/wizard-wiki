@@ -34,53 +34,75 @@ const Home = () => {
                 alt="wizard picture" 
                 src={WizardBannerImg} 
                 fill 
-                className="pointer-events-none select-none xl:block md:hidden" 
-                sizes="(min-width: 1280px) 33vw,
-                (min-width: 1528px) 25vw,
-                (min-width: 1870px) 20vw,
+                className="pointer-events-none select-none xl:block md:hidden home-image" 
+                sizes="(min-width: 1280px) 15vw,
+                (min-width: 1528px) 15vw,
+                (min-width: 1870px) 10vw,
                 0vw"
               />}
             </Container>
 
             <Title add="text-color-5 md:text-left" remove="text-white">What is Raven?</Title>
+            
             <Text add="mb-5 ml-0 text-lg font-light leading-8 md:ml-7 text-left">
               <span className="font-bold">Raven is a modern <Wizard101 link/> website that grants the community access to information that you mostly won't find anywhere else.</span> 
               &nbsp;We primarily focus on calculating drop rate percentages for mobs, packs, etc. but anything in Wizard101 that is RNG-based we can provide 
               a probability for. We also have categories where users can post <span className="font-bold">any</span> 
               &nbsp;interesting discovery they've made in the game that is worth sharing, whether technical or not.
             </Text>
+
             <Text add="mb-5 text-lg font-light leading-8 ml-0 md:ml-7">
               Raven is like a combination of social media and wikipedia exclusively for <Wizard101/>!
             </Text>
+
             <Container add="flex flex-row justify-end mb-3">
-              <button className="p-2 text-base text-lg font-extrabold transition-all rounded bg-color-4 hover:bg-[#35a66e] hover:px-4 mr-4">
-                <Link href={Enum.Pages.Explore.url}>Explore!</Link>
-              </button>
-              <button className="p-2 text-base text-lg font-extrabold transition-all rounded bg-secondary hover:px-4">
-                <Link href={Enum.Pages.About.url}>Learn more</Link>
-              </button>
+              <Link href={Enum.Pages.Explore.url}>
+                <button className="p-2 text-base text-lg font-extrabold transition-all rounded bg-color-4 hover:bg-[#35a66e] hover:px-4 mr-4">
+                  Explore!
+                </button>
+              </Link>
+              <Link href={Enum.Pages.About.url}>
+                <button className="p-2 text-base text-lg font-extrabold transition-all rounded bg-secondary hover:px-4">
+                  Learn more
+                </button>
+              </Link>
             </Container>
           </Container>
           
-          <Container add="pb-3 mb-16 bottom-line">
-            <Title add="text-color-5 md:text-left" remove="text-white">Why use Raven?</Title>
-            <Text add="mb-5 text-lg font-light leading-8 ml-7">
-              The official <WikiLink>Wizard101 Wiki</WikiLink> is great and all, but it has a lot of shortcomings. It's great for providing quick surface-level
-              information on boss cheats, item drops, quests, spells, etc. However, they keep the technical side of the game extremely hidden away. This is where 
-              Raven comes in.
-            </Text>
-            <Text add="text-lg font-light leading-8 mb-9 ml-7">
-              Raven aims to take all information that can be <span className="font-bold">legitimately</span> extrapolated from the game, and compile it
-              down into one place that is accessible to everyone. Such information may include:
-            </Text>
-            <List add="mb-6 ml-16">
-              <List.Item>Creature drop rates</List.Item>
-              <List.Item>Advanced Creature Stats <span className="text-sm font-bold">(critical, pip chance, etc...)</span></List.Item>
-              <List.Item>Damage Calculations</List.Item>
-              <List.Item>Reagent Drop/Spawn Rates</List.Item>
-              <List.Item>Pack drop rates</List.Item>
-              <Text>etc...</Text>
-            </List>
+          <Container add="pb-3 mb-16 bottom-line relative">
+            {/* <Container add="absolute w-[557px] h-[500px] left-[75%] top-[-150px] rotate-[25deg] pointer-events-none select-none">
+              {screenWidth > 1280 && <Image 
+                priority 
+                alt="grandmother raven" 
+                src={GrandmaRavenImg} 
+                fill 
+                className="opacity-30 xl:block md:hidden home-image" 
+                sizes="(min-width: 1280px) 33vw,
+                (min-width: 1528px) 25vw,
+                (min-width: 1870px) 20vw,
+                0vw"
+              />}
+            </Container> */}
+            <Container add="relative">
+              <Title add="text-color-5 md:text-left" remove="text-white">Why use Raven?</Title>
+              <Text add="mb-5 text-lg font-light leading-8 ml-0 md:ml-7">
+                The official <WikiLink>Wizard101 Wiki</WikiLink> is great and all, but it has a lot of shortcomings. It's great for providing quick surface-level
+                information on boss cheats, item drops, quests, spells, etc. However, they keep the technical side of the game extremely hidden away. This is where 
+                Raven comes in.
+              </Text>
+              <Text add="text-lg font-light leading-8 mb-9 ml-0 md:ml-7">
+                Raven aims to take all information that can be <span className="font-bold">legitimately</span> extrapolated from the game, and compile it
+                down into one place that is accessible to everyone. Such information may include:
+              </Text>
+              <List add="mb-6 ml-8 md:ml-16">
+                <List.Item>Creature drop rates</List.Item>
+                <List.Item>Advanced Creature Stats <span className="text-sm font-bold">(critical, pip chance, etc...)</span></List.Item>
+                <List.Item>Damage Calculations</List.Item>
+                <List.Item>Reagent Drop/Spawn Rates</List.Item>
+                <List.Item>Pack drop rates</List.Item>
+                <Text>etc...</Text>
+              </List>
+            </Container>
 
             <Container add="flex flex-wrap p-4 pl-10 pr-10 mb-3 justify-evenly">
               <Container add="relative min-w-[125px] w-[25%] h-[100px] m-5">
@@ -130,20 +152,22 @@ const Home = () => {
               </Container>
             </Container>
 
-            <Text add="mb-5 leading-8 text-md ml-7">
+            <Text add="mb-5 leading-8 text-md ml-0 md:ml-7">
               All of these statistics are obtained legitimately through many trials of large sample sizes. We do not cheat, hack, or exploit the game
               in order to get these statistics.
             </Text>
             <Container add="flex flex-row justify-end mb-3">
-              <button className="p-2 text-base text-lg font-extrabold transition-all rounded bg-secondary hover:px-4">
-                Learn more
-              </button>
+              <Link href={Enum.Pages.About.url}>
+                <button className="p-2 text-base text-lg font-extrabold transition-all rounded bg-secondary hover:px-4">
+                  Learn more
+                </button>
+              </Link>
             </Container>
           </Container>
 
           <Container add="pb-3 mb-16 bottom-line">
             <Title add="text-color-5 md:text-left" remove="text-white">What ISN'T Raven?</Title>
-            <List add="ml-3">
+            <List add="md:ml-3 ml-0">
               <List.Item add="mb-5 text-lg font-light leading-8 ml-7">
                 Raven is <span className="font-bold">NOT</span> a cheating, hacking, or exploiting site. We are by the books. Faulty game mechanics in Wizard101
                 may be discussed and shared here, but only as a method to help report the issue to legitimate Wizard101 admins.
@@ -158,9 +182,11 @@ const Home = () => {
               </List.Item>
             </List>
             <Container add="flex flex-row justify-end mb-3">
-              <button className="p-2 text-base text-lg font-extrabold transition-all rounded bg-secondary hover:px-4">
-                Learn more
-              </button>
+              <Link href={Enum.Pages.About.url}>
+                <button className="p-2 text-base text-lg font-extrabold transition-all rounded bg-secondary hover:px-4">
+                  Learn more
+                </button>
+              </Link>
             </Container>
           </Container>
 
@@ -213,15 +239,15 @@ const Home = () => {
             </Container>
 
             <Container add="flex flex-row justify-end mb-3">
-              <button className="p-2 text-base text-lg font-extrabold transition-all rounded bg-secondary hover:px-4">
-                Learn more
-              </button>
+              <Link href={Enum.Pages.About.url}>
+                <button className="p-2 text-base text-lg font-extrabold transition-all rounded bg-secondary hover:px-4">
+                  Learn more
+                </button>
+              </Link>
             </Container>
           </Container>
 
-
         </Container>
-
       </Container>
     </>
   )

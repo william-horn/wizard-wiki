@@ -11,9 +11,11 @@ import Head from 'next/head';
 import Navbar from './Navbar';
 import { useAppContext } from '../../../providers/AppProvider';
 import { useRef, useEffect } from 'react';
+import useWindowDimensions from '../../../hooks/useWindowDimensions';
 
 const HeaderFooterLayout = ({ children }) => {
   const { currentPage, layoutDiff } = useAppContext();
+  const { width: screenWidth } = useWindowDimensions();
   const header = useRef(null);
 
   // Determine if we should transition layout sub-components
@@ -60,7 +62,21 @@ const HeaderFooterLayout = ({ children }) => {
       {/* Override should be false when we load into a page and it doesn't need a transition. */}
       {/* If there is no last page, override should be false because there is nothing to transition from. */}
       {/* If there is a last page, but the last page and first page both have the same header state, there is no need to transition. */}
-      <Header ref={header} override={transitionHeader}>
+      <Header ref={header} override={transitionHeader} add="relative">
+        <Container add="absolute w-[657px] h-[600px] left-[70%] top-[-175px] rotate-[25deg] pointer-events-none select-none">
+          {screenWidth > 1280 && <Image 
+            priority 
+            alt="grandmother raven" 
+            src="/grandma-raven-crop-3.png"
+            fill 
+            quality={30}
+            className="xl:block md:hidden home-image" 
+            sizes="(min-width: 1280px) 33vw,
+            (min-width: 1528px) 25vw,
+            (min-width: 1870px) 20vw,
+            0vw"
+          />}
+        </Container>
         <Header.Title>
           <Container add="relative inline-block">
             <span className="relative">Welcome to&nbsp;</span>
