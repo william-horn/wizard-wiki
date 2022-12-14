@@ -32,7 +32,8 @@ const Home = () => {
                 className="pointer-events-none select-none xl:block md:hidden" 
                 sizes="(min-width: 1280px) 33vw,
                 (min-width: 1528px) 25vw,
-                (min-width: 1870px) 20vw"
+                (min-width: 1870px) 20vw,
+                0vw"
               />
             </Container>
 
@@ -88,7 +89,8 @@ const Home = () => {
                   (min-width: 1000px) 20vw,
                   (min-width: 1400px) 15vw,
                   (min-width: 1800px) 12vw,
-                  (min-width: 1920px) 10vw"
+                  (min-width: 1920px) 10vw,
+                  50vw"
                 />
               </Container>
               <Container className="relative min-w-[125px] w-[25%] h-[100px] m-5">
@@ -102,7 +104,8 @@ const Home = () => {
                   (min-width: 1000px) 20vw,
                   (min-width: 1400px) 15vw,
                   (min-width: 1800px) 12vw,
-                  (min-width: 1920px) 10vw"
+                  (min-width: 1920px) 10vw,
+                  50vw"
                 />
               </Container>
               <Container className="relative min-w-[125px] w-[25%] h-[100px] m-5">
@@ -116,7 +119,8 @@ const Home = () => {
                   (min-width: 1000px) 20vw,
                   (min-width: 1400px) 15vw,
                   (min-width: 1800px) 12vw,
-                  (min-width: 1920px) 10vw"
+                  (min-width: 1920px) 10vw,
+                  50vw"
                 />
               </Container>
             </Container>

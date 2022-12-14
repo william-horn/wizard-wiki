@@ -68,7 +68,13 @@ const HeaderFooterLayout = ({ children }) => {
           </Container>
           <Container className="relative inline-block">
             <span className="relative z-10 text-primary logo-shadow">Raven</span>
-            <Image className="absolute pointer-events-none select-none top-[-25%] left-[60%] logo-image" src="/logo3.png" alt="logo" width={75} height={75}/>
+            <Image 
+              className="absolute pointer-events-none select-none top-[-25%] left-[60%] logo-image" 
+              src="/logo3.png" 
+              alt="logo" 
+              width={75} 
+              height={75}
+            />
           </Container>
         </Header.Title>
 
