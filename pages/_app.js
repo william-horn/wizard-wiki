@@ -3,7 +3,6 @@ import { AppProvider } from '../providers';
 import { useLocalStorage } from '../hooks/useLocalStorage';
 import Enum from '../enums';
 import { useEffect, useState, useRef } from 'react';
-import Screen from '../components/containers/Screen';
 import Container from '../components/containers/Container';
 import LayoutController from '../components/layouts';
 import { useRouter } from 'next/router';
@@ -21,46 +20,60 @@ if (typeof window !== 'undefined') {
   });
 }
 
+// function MyApp({ Component, pageProps }) {
+//   const router = useRouter();
+//   const currentPage = Enum.Pages.findByMatch('url', router.pathname) || Enum.Pages._404;
+//   const lastPageRef = useRef(null);
+//   const lastPage = lastPageRef.current;
+
+//   // Update the last page visited on this website.
+//   useEffect(() => {
+//     lastPageRef.current = currentPage;
+//   });
+
+//   /* 
+//     Determine if there is a difference in layout sub-component rendering between 
+//     the current page and the last page.
+//   */
+//   const layoutDiff = (componentName) => {
+//     return lastPage && 
+//       (currentPage.excludes(componentName) !== lastPage.excludes(componentName));
+//   }
+
+//   console.log('last page: ', lastPage && lastPage.name);
+//   console.log('current page: ', currentPage.name);
+//   console.log('layout diff: ', layoutDiff('header'));
+
+//   return (
+//     <AppProvider value={{
+//       // top level state vars
+//       currentPage,
+//       lastPage,
+//       firstPageLoad: lastPage === null,
+//       layoutDiff
+//     }}>
+//       <Container add="min-h-screen bg-primary">
+//         <LayoutController>
+//           <Component {...pageProps} />
+//         </LayoutController>
+//       </Container>
+//     </AppProvider>
+//   )
+// }
+
+
 function MyApp({ Component, pageProps }) {
-  const router = useRouter();
-  const currentPage = Enum.Pages.findByMatch('url', router.pathname) || Enum.Pages._404;
-  const lastPageRef = useRef(null);
-  const lastPage = lastPageRef.current;
-
-  // Update the last page visited on this website.
-  useEffect(() => {
-    lastPageRef.current = currentPage;
-  });
-
-  /* 
-    Determine if there is a difference in layout sub-component rendering between 
-    the current page and the last page.
-  */
-  const layoutDiff = (componentName) => {
-    return lastPage && 
-      (currentPage.excludes(componentName) !== lastPage.excludes(componentName));
-  }
-
-  console.log('last page: ', lastPage && lastPage.name);
-  console.log('current page: ', currentPage.name);
-  console.log('layout diff: ', layoutDiff('header'));
 
   return (
     <AppProvider value={{
-      // top level state vars
-      currentPage,
-      lastPage,
-      firstPageLoad: lastPage === null,
-      layoutDiff
     }}>
       <Container add="min-h-screen bg-primary">
-        <LayoutController>
+        {/* <LayoutController> */}
           <Component {...pageProps} />
-        </LayoutController>
+        {/* </LayoutController> */}
       </Container>
     </AppProvider>
   )
 }
 
-MyApp.displayName = "MyApp";
 export default MyApp

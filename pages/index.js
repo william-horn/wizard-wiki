@@ -227,5 +227,12 @@ const Home = () => {
   )
 }
 
-Home.displayName = "Home";
-export default Home;
+const HomeTest = () => {
+  return (
+    <div>
+      <p className="text-white">Hello world!</p>
+    </div>
+  );
+}
+
+export default HomeTest;
