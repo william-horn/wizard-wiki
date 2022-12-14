@@ -27,7 +27,7 @@ const Navbar = React.forwardRef(({ add, remove, override }, ref) => {
           url={page.url} 
           currentUrl={currentPage.url}>
             {page.name}
-            <span className={`px-3 ${index >= navPages.length - 1 && 'hidden'}`}>|</span>
+            <span className={`px-3 text-white ${index >= navPages.length - 1 && 'hidden'}`}>|</span>
           </NavLink>
         )
       }

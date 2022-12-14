@@ -35,15 +35,20 @@ const Pages = new EnumCollection({
 
   About: new PageItem({
     value: 'about',
-    title: 'About',
+    title: 'Raven About',
     name: 'About',
     url: '/about',
-    layout: { name: 'HeaderFooterLayout', excludes: { header: true }}
+    layout: { 
+      name: 'HeaderFooterLayout', 
+      excludes: { 
+        // header: true 
+      }
+    }
   }),
 
   Explore: new PageItem({
     value: 'explore',
-    title: 'Explore',
+    title: 'Raven Explore',
     name: 'Explore',
     url: '/explore',
     layout: {
@@ -56,7 +61,7 @@ const Pages = new EnumCollection({
 
   Donate: new PageItem({
     value: 'donate',
-    title: 'Donate',
+    title: 'Raven Donate',
     name: 'Donate',
     url: '/donate',
     layout: 'HeaderFooterLayout',

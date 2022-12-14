@@ -16,26 +16,38 @@ const HeaderFooterLayout = ({ children }) => {
   const { currentPage, layoutDiff } = useAppContext();
   const header = useRef(null);
 
+  // Determine if we should transition layout sub-components
+  const transitionHeader = layoutDiff('header');
+
+  // Handle layout sub-component transitions between pages
   useEffect(() => {
     /* 
-      If header override is false, the current page may not have a header, in which case return.
+      If header override is false, the current page may not have a header, in which case exit out.
       If header override is true, header will always exist.
     */
     if (!header.current) return;
+    /*
+      If there is no difference in headers between pages, exit out.
+    */
+    if (!transitionHeader) return;
 
     /* 
       From here on, we know there is a difference in header visibility between pages and a transition will take place.
+      Start computing header size.
     */
+    header.current.style.setProperty(
+      '--client-height', 
+      header.current.clientHeight + 1 + 'px'
+    ); // +1 pixel because of navbar border thickness
 
-    header.current.style.setProperty('--client-height', header.current.clientHeight + 1 + 'px'); // +1 pixel because of navbar border thickness
-
-    // If this page excludes the header, then the last page does not.
+    // Modify CSS variables for the transition-header class to use.
     if (currentPage.excludes('header')) {
       header.current.style.setProperty('--header-anim', 'hide-header');
     } else {
       header.current.style.setProperty('--header-anim', 'show-header');
     }
 
+    // Apply the transition class.
     header.current.classList.add('transition-header');
   });
   
@@ -48,7 +60,7 @@ const HeaderFooterLayout = ({ children }) => {
       {/* Override should be false when we load into a page and it doesn't need a transition. */}
       {/* If there is no last page, override should be false because there is nothing to transition from. */}
       {/* If there is a last page, but the last page and first page both have the same header state, there is no need to transition. */}
-      <Header ref={header} override={layoutDiff('header')}>
+      <Header ref={header} override={transitionHeader}>
         <Header.Title>
           <Container className="relative inline-block">
             <span className="relative">Welcome to&nbsp;</span>
@@ -67,7 +79,6 @@ const HeaderFooterLayout = ({ children }) => {
       </Header>
 
       {/* Page Nav bar */}
-      {/* !issue with generating nav links here; component fragment doesn't have a key prop */}
       <Navbar/>
       
       <Container className="min-h-screen">

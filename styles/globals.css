@@ -45,6 +45,8 @@ html,
 body {
   padding: 0;
   margin: 0;
+  /* background-color: yellow; */
+  background-color: #16191d;
 }
 
 a {
@@ -86,7 +88,7 @@ a {
 }
 
 .transition-header {
-  animation-timing-function: cubic-bezier(0.445, 0.05, 0.55, 0.95);
+  animation-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
   animation-delay: 0s;
   animation-name: var(--header-anim);
   animation-duration: 0.5s;

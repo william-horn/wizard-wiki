@@ -27,14 +27,23 @@ function MyApp({ Component, pageProps }) {
   const lastPageRef = useRef(null);
   const lastPage = lastPageRef.current;
 
+  // Update the last page visited on this website.
   useEffect(() => {
     lastPageRef.current = currentPage;
   });
 
+  /* 
+    Determine if there is a difference in layout sub-component rendering between 
+    the current page and the last page.
+  */
   const layoutDiff = (componentName) => {
     return lastPage && 
       (currentPage.excludes(componentName) !== lastPage.excludes(componentName));
   }
+
+  console.log('last page: ', lastPage && lastPage.name);
+  console.log('current page: ', currentPage.name);
+  console.log('layout diff: ', layoutDiff('header'));
 
   return (
     <AppProvider value={{
