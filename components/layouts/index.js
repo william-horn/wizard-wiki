@@ -24,7 +24,7 @@ const LayoutController = ({ children }) => {
   }
 
   return (
-    <Container>
+    <Container add="layout-controller">
       {getRenderedLayout()}
     </Container>
   );

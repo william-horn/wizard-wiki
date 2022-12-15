@@ -20,7 +20,7 @@ const Navbar = React.forwardRef(({ add, remove, override }, ref) => {
   if (currentPage.excludes('navbar', override)) return <></>;
   
   return (
-    <nav ref={ref} className={constructClassName("flex flex-wrap justify-center p-3 bottom-line bg-secondary", {add, remove})}>
+    <nav ref={ref} className={constructClassName("flex flex-wrap sticky top-0 z-50 justify-center p-3 bottom-line bg-secondary", {add, remove})}>
       {
         navPages.map((page, index) =>
           <NavLink

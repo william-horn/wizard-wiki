@@ -54,7 +54,7 @@ const HeaderFooterLayout = ({ children }) => {
   });
   
   return (
-    <Container add="bg-primary">
+    <Container add="header-footer-layout bg-primary">
       <Head>
         <title>{currentPage.title}</title>
       </Head>
@@ -103,7 +103,7 @@ const HeaderFooterLayout = ({ children }) => {
       {/* Page Nav bar */}
       <Navbar/>
       
-      <Container add="min-h-screen">
+      <Container add="min-h-screen relative">
         {children}
       </Container>
 

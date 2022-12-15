@@ -49,7 +49,7 @@ function MyApp({ Component, pageProps }) {
       firstPageLoad: lastPage === null,
       layoutDiff
     }}>
-      <Container add="min-h-screen bg-primary">
+      <Container add="wrapper w-screen h-screen bg-primary overflow-x-hidden overflow-y-scroll">
         <LayoutController>
           <Component {...pageProps} />
         </LayoutController>

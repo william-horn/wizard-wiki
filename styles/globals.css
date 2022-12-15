@@ -45,7 +45,7 @@ html,
 body {
   padding: 0;
   margin: 0;
-  overflow-y: auto;
+  /* overflow-y: auto; */
   /* background-color: yellow; */
   background-color: #16191d;
 }
