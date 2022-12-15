@@ -10,24 +10,33 @@ import Enum from '../../../enums';
 import Head from 'next/head';
 import Navbar from './Navbar';
 import { useAppContext } from '../../../providers/AppProvider';
+import HeaderFooterLayoutProvider from '../../../providers/HeaderFooterLayoutProvider';
 import { useRef, useEffect } from 'react';
 import useWindowDimensions from '../../../hooks/useWindowDimensions';
 
 const HeaderFooterLayout = ({ children }) => {
   const { currentPage, layoutDiff } = useAppContext();
   const { width: screenWidth } = useWindowDimensions();
-  const header = useRef(null);
+
+  const headerRef = useRef(null);
+  const navbarRef = useRef(null);
+  const footerRef = useRef(null);
+
+  const context = {};
 
   // Determine if we should transition layout sub-components
   const transitionHeader = layoutDiff('header');
 
   // Handle layout sub-component transitions between pages
   useEffect(() => {
+    const header = headerRef.current;
+    const navbar = navbarRef.current;
+    const footer = footerRef.current;
     /* 
       If header override is false, the current page may not have a header, in which case exit out.
       If header override is true, header will always exist.
     */
-    if (!header.current) return;
+    if (!header) return;
     /*
       If there is no difference in headers between pages, exit out.
     */
@@ -37,20 +46,20 @@ const HeaderFooterLayout = ({ children }) => {
       From here on, we know there is a difference in header visibility between pages and a transition will take place.
       Start computing header size.
     */
-    header.current.style.setProperty(
+      header.style.setProperty(
       '--client-height', 
-      header.current.clientHeight + 1 + 'px'
+      header.clientHeight + 1 + 'px'
     ); // +1 pixel because of navbar border thickness
 
     // Modify CSS variables for the transition-header class to use.
     if (currentPage.excludes('header')) {
-      header.current.style.setProperty('--header-anim', 'hide-header');
+      header.style.setProperty('--header-anim', 'hide-header');
     } else {
-      header.current.style.setProperty('--header-anim', 'show-header');
+      header.style.setProperty('--header-anim', 'show-header');
     }
 
     // Apply the transition class.
-    header.current.classList.add('transition-header');
+    header.classList.add('transition-header');
   });
   
   return (
@@ -62,7 +71,7 @@ const HeaderFooterLayout = ({ children }) => {
       {/* Override should be false when we load into a page and it doesn't need a transition. */}
       {/* If there is no last page, override should be false because there is nothing to transition from. */}
       {/* If there is a last page, but the last page and first page both have the same header state, there is no need to transition. */}
-      <Header ref={header} override={transitionHeader} add="relative">
+      <Header ref={headerRef} override={transitionHeader} add="relative">
         <Container add="absolute w-[657px] h-[600px] left-[70%] top-[-175px] rotate-[25deg] pointer-events-none select-none">
           {screenWidth > 1250 && <Image 
             priority 
@@ -101,13 +110,15 @@ const HeaderFooterLayout = ({ children }) => {
       </Header>
 
       {/* Page Nav bar */}
-      <Navbar/>
+      <Navbar ref={navbarRef}/>
       
-      <Container add="min-h-screen relative">
-        {children}
-      </Container>
+      <HeaderFooterLayoutProvider value={context}>
+        <Container add="layout-frame min-h-screen relative">
+          {children}
+        </Container>
+      </HeaderFooterLayoutProvider>
 
-      <Footer add="pb-10 top-line">
+      <Footer add="pb-10 top-line" ref={footerRef}>
         <Footer.Title className="p-4 text-center">Reach Out</Footer.Title>
         <Container add="flex flex-wrap items-start justify-between gap-12 p-4 pb-10 lg:justify-center">
 

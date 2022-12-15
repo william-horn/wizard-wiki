@@ -1,12 +1,11 @@
 import '../styles/globals.css';
-import { AppProvider } from '../providers';
+import AppProvider from '../providers/AppProvider';
 import { useLocalStorage } from '../hooks/useLocalStorage';
 import Enum from '../enums';
 import { useEffect, useState, useRef } from 'react';
 import Container from '../components/containers/Container';
 import LayoutController from '../components/layouts';
 import { useRouter } from 'next/router';
-import constructClassName from '../lib/helpers/constructClassName';
 
 if (typeof window !== 'undefined') {
   const allEl = window.document.querySelector("body");
@@ -23,14 +22,15 @@ if (typeof window !== 'undefined') {
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
-  const currentPage = Enum.Pages.findByMatch('url', router.pathname) || Enum.Pages._404;
+  const currentUrl = router.pathname;
+  const currentPage = Enum.Pages.findByMatch('url', currentUrl) || Enum.Pages._404;
   const lastPageRef = useRef(null);
   const lastPage = lastPageRef.current;
 
   // Update the last page visited on this website.
   useEffect(() => {
     lastPageRef.current = currentPage;
-  });
+  }, [currentUrl]);
 
   /* 
     Determine if there is a difference in layout sub-component rendering between 
@@ -41,12 +41,16 @@ function MyApp({ Component, pageProps }) {
       (currentPage.excludes(componentName) !== lastPage.excludes(componentName));
   }
 
+  // console.log('current page: ', currentPage.name);
+  // console.log('last page: ', lastPage && lastPage.name);
+
   return (
     <AppProvider value={{
       // top level state vars
       currentPage,
       lastPage,
       firstPageLoad: lastPage === null,
+      currentUrl,
       layoutDiff
     }}>
       <Container add="wrapper w-screen h-screen bg-primary overflow-x-hidden overflow-y-scroll">

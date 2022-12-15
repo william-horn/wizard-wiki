@@ -55,6 +55,7 @@ const Pages = new EnumCollection({
       name: 'HeaderFooterLayout',
       excludes: {
         header: true,
+        // navbar: true
         // footer: true
       }
     }
@@ -65,7 +66,7 @@ const Pages = new EnumCollection({
     title: 'Raven Donate',
     name: 'Donate',
     url: '/donate',
-    layout: 'HeaderFooterLayout',
+    layout: { name: 'HeaderFooterLayout' },
   }),
 
   News: new PageItem({ 

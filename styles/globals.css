@@ -107,7 +107,7 @@ a {
 
 .transition-header {
   /* --header-anim */
-  animation-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  animation-timing-function:cubic-bezier(0.075, 0.82, 0.165, 1);
   animation-delay: 0s;
   animation-name: var(--header-anim);
   animation-duration: 0.5s;
@@ -116,9 +116,19 @@ a {
 
 .fade-in-slow {
   /* --fade-anim */
+  opacity: 0;
   animation-timing-function: linear;
   animation-name: fade-in;
   animation-duration: 1s;
+  animation-delay: 0.4s;
+  animation-fill-mode: forwards;
+}
+
+.menu-slide-in {
+  animation-timing-function: cubic-bezier(0.23, 1, 0.320, 1);
+  animation-name: slide-left-right;
+  animation-duration: 0.5s;
+  animation-delay: 0.3s;
   animation-fill-mode: forwards;
 }
 
@@ -154,6 +164,11 @@ a {
 @keyframes fade-in {
   0% { opacity: 0; }
   100% { opacity: 1; }
+}
+
+@keyframes slide-left-right {
+  0% { right: 100%; }
+  100% { right: 0; }
 }
 
 /*
