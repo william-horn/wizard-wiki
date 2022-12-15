@@ -101,10 +101,31 @@ a {
   /* animation: linear 10s logo-color infinite; */
 }
 
+.text-shadow-md {
+  text-shadow: 0 0 3px black;
+}
+
 .transition-header {
+  /* --header-anim */
   animation-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
   animation-delay: 0s;
   animation-name: var(--header-anim);
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+}
+
+.fade-in-slow {
+  /* --fade-anim */
+  animation-timing-function: linear;
+  animation-name: fade-in;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+.fade-in-fast {
+  /* --fade-anim */
+  animation-timing-function: linear;
+  animation-name: fade-in;
   animation-duration: 0.5s;
   animation-fill-mode: forwards;
 }
@@ -128,6 +149,11 @@ a {
 @keyframes show-header {
   0% { margin-top: calc(var(--client-height)*-1); }
   100% { margin-top: 0px; }
+}
+
+@keyframes fade-in {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
 }
 
 /*
