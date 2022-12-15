@@ -86,6 +86,11 @@ a {
   filter: drop-shadow(2px 4px 15px black);
 }
 
+.home-title {
+  font-family: 'Shadows Into Light', cursive;
+  letter-spacing: 3px;
+}
+
 .logo-image {
   --shadow: drop-shadow(-2px -2px 1px #ff2fdc);
   filter: var(--shadow);

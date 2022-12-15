@@ -11,7 +11,8 @@ const navPages = [
   Enum.Pages.Home,
   Enum.Pages.Explore,
   Enum.Pages.About,
-  Enum.Pages.Donate
+  Enum.Pages.Donate,
+  Enum.Pages.News
 ]
 
 const Navbar = React.forwardRef(({ add, remove, override }, ref) => {

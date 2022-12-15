@@ -64,7 +64,7 @@ const HeaderFooterLayout = ({ children }) => {
       {/* If there is a last page, but the last page and first page both have the same header state, there is no need to transition. */}
       <Header ref={header} override={transitionHeader} add="relative">
         <Container add="absolute w-[657px] h-[600px] left-[70%] top-[-175px] rotate-[25deg] pointer-events-none select-none">
-          {screenWidth > 1280 && <Image 
+          {screenWidth > 1250 && <Image 
             priority 
             alt="grandmother raven" 
             src="/grandma-raven-crop-3.png"

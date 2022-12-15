@@ -67,6 +67,14 @@ const Pages = new EnumCollection({
     layout: 'HeaderFooterLayout',
   }),
 
+  News: new PageItem({ 
+    value: 'news',
+    title: 'Raven News',
+    name: 'News',
+    url: '/news',
+    layout: 'HeaderFooterLayout'
+  }),
+
   _404: new PageItem({
     value: 'page_not_found',
     title: 'Not Found',

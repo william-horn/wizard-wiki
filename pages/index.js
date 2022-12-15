@@ -29,7 +29,7 @@ const Home = () => {
 
           <Container add="relative pb-3 mb-16 bottom-line">
             <Container add="absolute w-[230px] h-[472px] right-[100%]">
-              {screenWidth > 1280 && <Image 
+              {screenWidth > 1250 && <Image 
                 priority 
                 alt="wizard picture" 
                 src={WizardBannerImg} 
@@ -42,13 +42,12 @@ const Home = () => {
               />}
             </Container>
 
-            <Title add="text-color-5 md:text-left" remove="text-white">What is Raven?</Title>
+            <Title add="text-color-5 md:text-left home-title" remove="text-white">What is Raven?</Title>
             
             <Text add="mb-5 ml-0 text-lg font-light leading-8 md:ml-7 text-left">
-              <span className="font-bold">Raven is a modern <Wizard101 link/> website that grants the community access to information that you mostly won't find anywhere else.</span> 
-              &nbsp;We primarily focus on calculating drop rate percentages for mobs, packs, etc. but anything in Wizard101 that is RNG-based we can provide 
-              a probability for. We also have categories where users can post <span className="font-bold">any</span> 
-              &nbsp;interesting discovery they've made in the game that is worth sharing, whether technical or not.
+              <span className="font-bold">Raven is a modern app for <Wizard101 link/> players, which is designed to make technical information about the game more accessible.</span> 
+              &nbsp;We primarily focus on calculating drop rate percentages for mobs, packs, etc, but anything in the game that is deducible we try to provide data for. We also have areas where users can post <span className="font-bold">any</span> 
+              &nbsp;interesting discovery they've made in the game that is worth sharing (technical or not).
             </Text>
 
             <Text add="mb-5 text-lg font-light leading-8 ml-0 md:ml-7">
@@ -84,22 +83,25 @@ const Home = () => {
               />}
             </Container> */}
             <Container add="relative">
-              <Title add="text-color-5 md:text-left" remove="text-white">Why use Raven?</Title>
+              <Title add="text-color-5 md:text-left home-title" remove="text-white">Why use Raven?</Title>
+
               <Text add="mb-5 text-lg font-light leading-8 ml-0 md:ml-7">
                 The official <WikiLink>Wizard101 Wiki</WikiLink> is great and all, but it has a lot of shortcomings. It's great for providing quick surface-level
                 information on boss cheats, item drops, quests, spells, etc. However, they keep the technical side of the game extremely hidden away. This is where 
                 Raven comes in.
               </Text>
+
               <Text add="text-lg font-light leading-8 mb-9 ml-0 md:ml-7">
                 Raven aims to take all information that can be <span className="font-bold">legitimately</span> extrapolated from the game, and compile it
                 down into one place that is accessible to everyone. Such information may include:
               </Text>
+
               <List add="mb-6 ml-8 md:ml-16">
-                <List.Item>Creature drop rates</List.Item>
-                <List.Item>Advanced Creature Stats <span className="text-sm font-bold">(critical, pip chance, etc...)</span></List.Item>
-                <List.Item>Damage Calculations</List.Item>
-                <List.Item>Reagent Drop/Spawn Rates</List.Item>
-                <List.Item>Pack drop rates</List.Item>
+                <List.Item add="text-yellow-400">Creature drop rates</List.Item>
+                <List.Item add="text-yellow-400">Advanced Creature Stats <span className="text-sm font-bold text-[#6e6e6e]">(critical, pip chance, etc...)</span></List.Item>
+                <List.Item add="text-yellow-400">Damage Calculations</List.Item>
+                <List.Item add="text-yellow-400">Reagent Drop/Spawn Rates</List.Item>
+                <List.Item add="text-yellow-400">Pack drop rates</List.Item>
                 <Text>etc...</Text>
               </List>
             </Container>
@@ -110,6 +112,7 @@ const Home = () => {
                   alt="game packs" 
                   src="/wiz-packs.png" 
                   fill 
+                  quality={30}
                   className="object-cover rounded-[20px]"
                   sizes="(min-width: 500px) 33vw,
                   (min-width: 700px) 25vw,
@@ -124,6 +127,7 @@ const Home = () => {
                 <Image 
                   alt="spell critical" 
                   src="/critical-shot.png" 
+                  quality={30}
                   fill 
                   className="object-cover rounded-[20px]"
                   sizes="(min-width: 500px) 33vw,
@@ -139,6 +143,7 @@ const Home = () => {
                 <Image 
                   alt="wizard101 dungeon" 
                   src="/dungeon-pic-1.jpg" 
+                  quality={30}
                   fill 
                   className="object-cover rounded-[20px]"
                   sizes="(min-width: 500px) 33vw,
@@ -166,7 +171,8 @@ const Home = () => {
           </Container>
 
           <Container add="pb-3 mb-16 bottom-line">
-            <Title add="text-color-5 md:text-left" remove="text-white">What ISN'T Raven?</Title>
+            <Title add="text-color-5 md:text-left home-title" remove="text-white">What ISN'T Raven?</Title>
+
             <List add="md:ml-3 ml-0">
               <List.Item add="mb-5 text-lg font-light leading-8 ml-7">
                 Raven is <span className="font-bold">NOT</span> a cheating, hacking, or exploiting site. We are by the books. Faulty game mechanics in Wizard101
@@ -181,6 +187,7 @@ const Home = () => {
                 our goal is only to <span className="font-bold">add</span> new types of information that the original wiki does not document.
               </List.Item>
             </List>
+
             <Container add="flex flex-row justify-end mb-3">
               <Link href={Enum.Pages.About.url}>
                 <button className="p-2 text-base text-lg font-extrabold transition-all rounded bg-secondary hover:px-4">
@@ -191,7 +198,7 @@ const Home = () => {
           </Container>
 
           <Container add="pb-3 mb-16 bottom-line">
-            <Title add="text-color-5 md:text-left" remove="text-white">FAQ</Title>
+            <Title add="text-color-5 md:text-left home-title" remove="text-white">FAQ</Title>
 
             <Container add="left-line">
               <Text add="mb-5 text-lg font-bold leading-8 ml-7">
