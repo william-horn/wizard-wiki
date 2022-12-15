@@ -22,10 +22,18 @@ const HeaderFooterLayout = ({ children }) => {
   const navbarRef = useRef(null);
   const footerRef = useRef(null);
 
-  const context = {};
+  const context = {
+    navbarHeight: 0,
+  };
 
   // Determine if we should transition layout sub-components
   const transitionHeader = layoutDiff('header');
+
+  useEffect(() => {
+    const navbar = navbarRef.current;
+    context.navbarHeight = navbar ? navbar.clientHeight : context.navbarHeight;
+    console.log('computed navbar height: ', context.navbarHeight);
+  });
 
   // Handle layout sub-component transitions between pages
   useEffect(() => {

@@ -45,6 +45,7 @@ html,
 body {
   padding: 0;
   margin: 0;
+  /* overflow-x: hidden; */
   /* overflow-y: auto; */
   /* background-color: yellow; */
   background-color: #16191d;
@@ -107,10 +108,10 @@ a {
 
 .transition-header {
   /* --header-anim */
-  animation-timing-function:cubic-bezier(0.075, 0.82, 0.165, 1);
+  animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
   animation-delay: 0s;
   animation-name: var(--header-anim);
-  animation-duration: 0.5s;
+  animation-duration: 0.3s;
   animation-fill-mode: forwards;
 }
 
@@ -125,7 +126,7 @@ a {
 }
 
 .menu-slide-in {
-  animation-timing-function: cubic-bezier(0.23, 1, 0.320, 1);
+  animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
   animation-name: slide-left-right;
   animation-duration: 0.5s;
   animation-delay: 0.3s;
