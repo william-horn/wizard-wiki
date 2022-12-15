@@ -3,8 +3,6 @@ import Container from "../containers/Container";
 import constructClassName from "../../lib/helpers/constructClassName";
 import Image from "next/image";
 
-const iconSizes = "48px";
-
 const Button = ({ 
   children, 
   className, 
@@ -16,12 +14,13 @@ const Button = ({
   iconSize='25px',
   onClick 
 }) => {
+  console.log('icon size: ', iconSize);
   return (
     <Container onClick={onClick} className={constructClassName("flex items-center mx-2 my-2 px-2 rounded cursor-pointer", {className: containerClassName, remove: containerRemove})}>
       {
         leftIcon ? 
           <Container className={`icon-frame relative w-[${iconSize}] h-[${iconSize}]`}>
-            <Image alt="icon" className="custom-icon filter invert" src={leftIcon} fill sizes={iconSizes}/>
+            <Image alt="icon" className="custom-icon filter invert" src={leftIcon} fill sizes="48px"/>
           </Container> 
         : <></>
       }
@@ -34,7 +33,7 @@ const Button = ({
       {
         rightIcon ?
           <Container className={`icon-frame relative w-[${iconSize}] h-[${iconSize}]`}>
-            <Image alt="icon" className="custom-icon filter invert" src={rightIcon} fill sizes={iconSizes}/>
+            <Image alt="icon" className="custom-icon filter invert" src={rightIcon} fill sizes="48px"/>
           </Container>
         : <></>
       }
