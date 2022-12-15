@@ -53,8 +53,12 @@ const HeaderFooterLayout = ({ children }) => {
 
     // Modify CSS variables for the transition-header class to use.
     if (currentPage.excludes('header')) {
+      header.style.setProperty('--header-anim-style', 'cubic-bezier(0.34,-0.41, 0.98,-0.36)');
+      header.style.setProperty('--header-anim-delay', '0s')
       header.style.setProperty('--header-anim', 'hide-header');
     } else {
+      header.style.setProperty('--header-anim-style', 'cubic-bezier(0.175, 0.885, 0.32, 1.275)');
+      header.style.setProperty('--header-anim-delay', '0s')
       header.style.setProperty('--header-anim', 'show-header');
     }
 
@@ -113,7 +117,7 @@ const HeaderFooterLayout = ({ children }) => {
       <Navbar ref={navbarRef}/>
       
       <HeaderFooterLayoutProvider value={context}>
-        <Container className="layout-frame min-h-screen relative">
+        <Container className="relative min-h-screen layout-frame">
           {children}
         </Container>
       </HeaderFooterLayoutProvider>

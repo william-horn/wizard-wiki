@@ -13,13 +13,14 @@ const Button = ({
   remove, 
   leftIcon, 
   rightIcon, 
+  iconSize='25px',
   onClick 
 }) => {
   return (
     <Container onClick={onClick} className={constructClassName("flex items-center mx-2 my-2 px-2 rounded cursor-pointer", {className: containerClassName, remove: containerRemove})}>
       {
         leftIcon ? 
-          <Container className="icon-frame relative w-[25px] h-[25px]">
+          <Container className={`icon-frame relative w-[${iconSize}] h-[${iconSize}]`}>
             <Image alt="icon" className="custom-icon filter invert" src={leftIcon} fill sizes={iconSizes}/>
           </Container> 
         : <></>
@@ -32,7 +33,7 @@ const Button = ({
       
       {
         rightIcon ?
-          <Container className="icon-frame relative w-[25px] h-[25px]">
+          <Container className={`icon-frame relative w-[${iconSize}] h-[${iconSize}]`}>
             <Image alt="icon" className="custom-icon filter invert" src={rightIcon} fill sizes={iconSizes}/>
           </Container>
         : <></>
