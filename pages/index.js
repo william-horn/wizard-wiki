@@ -42,7 +42,7 @@ const Home = () => {
               />}
             </Container>
 
-            <Title add="text-color-5 md:text-left home-title" remove="text-white">What is Raven?</Title>
+            <Title add="text-color-5 md:text-left shadows-font" remove="text-white">What is Raven?</Title>
             
             <Text add="mb-5 ml-0 text-lg font-light leading-8 md:ml-7 text-left">
               <span className="font-bold">Raven is a modern app for <Wizard101 link/> players, which is designed to make technical information about the game more accessible.</span> 
@@ -83,7 +83,7 @@ const Home = () => {
               />}
             </Container> */}
             <Container add="relative">
-              <Title add="text-color-5 md:text-left home-title" remove="text-white">Why use Raven?</Title>
+              <Title add="text-color-5 md:text-left shadows-font" remove="text-white">Why use Raven?</Title>
 
               <Text add="mb-5 text-lg font-light leading-8 ml-0 md:ml-7">
                 The official <WikiLink>Wizard101 Wiki</WikiLink> is great and all, but it has a lot of shortcomings. It's great for providing quick surface-level
@@ -171,7 +171,7 @@ const Home = () => {
           </Container>
 
           <Container add="pb-3 mb-16 bottom-line">
-            <Title add="text-color-5 md:text-left home-title" remove="text-white">What ISN'T Raven?</Title>
+            <Title add="text-color-5 md:text-left shadows-font" remove="text-white">What ISN'T Raven?</Title>
 
             <List add="md:ml-3 ml-0">
               <List.Item add="mb-5 text-lg font-light leading-8 ml-7">
@@ -198,7 +198,7 @@ const Home = () => {
           </Container>
 
           <Container add="pb-3 mb-16 bottom-line">
-            <Title add="text-color-5 md:text-left home-title" remove="text-white">FAQ</Title>
+            <Title add="text-color-5 md:text-left shadows-font" remove="text-white">FAQ</Title>
 
             <Container add="left-line">
               <Text add="mb-5 text-lg font-bold leading-8 ml-7">

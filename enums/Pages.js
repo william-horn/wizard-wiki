@@ -55,6 +55,7 @@ const Pages = new EnumCollection({
       name: 'HeaderFooterLayout',
       excludes: {
         header: true,
+        footer: true
       }
     }
   }),

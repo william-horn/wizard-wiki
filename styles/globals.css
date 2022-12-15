@@ -86,9 +86,13 @@ a {
   filter: drop-shadow(2px 4px 15px black);
 }
 
-.home-title {
+.shadows-font {
   font-family: 'Shadows Into Light', cursive;
   letter-spacing: 3px;
+}
+
+.fredoka-font {
+  font-family: 'Fredoka One', cursive;
 }
 
 .logo-image {
