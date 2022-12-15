@@ -10,9 +10,10 @@ import { useHeaderFooterLayoutContext } from "../../providers/HeaderFooterLayout
 import { useEffect, useState, useRef } from 'react';
 import { useAppContext } from "../../providers/AppProvider";
 import Navbar from "../../components/layouts/HeaderFooterLayout/Navbar";
+import Button from "../../components/buttons/Button";
+import Icons from '../../lib/helpers/icons';
 
 const Explore = function() {
-  const { navbarHeight } = useHeaderFooterLayoutContext();
   const navbarRef = useRef(null);
   const menuRef = useRef(null);
 
@@ -21,29 +22,35 @@ const Explore = function() {
   });
 
   return (
-    <Container add="flex h-full w-full absolute">
+    <>
+      <Container className="flex flex-col h-screen">
+        <Navbar ref={navbarRef} override/>
+        <Container className="flex h-full">
 
-      {/* Menu */}
-      <Container ref={menuRef} add="w-[12%] h-fit sticky">
-        <Container add="relative right-[100%] menu-slide-in bg-secondary p-5">
-          <Title add="tracking-wider shadows-font bottom-line mx-3 mb-3">Menu</Title>
-          <Container add="flex flex-col">
-            <button className="p-2 mx-5 my-2 text-xl rounded text-white bg-[#333e4a] shadow-[3px_3px_3px_rgb(0,0,0)] text-shadow-md">Post</button>
-            <button className="p-2 mx-5 my-2 text-xl rounded text-white bg-[#333e4a] shadow-[3px_3px_3px_rgb(0,0,0)] text-shadow-md">Start Drop Session</button>
-            <button className="p-2 mx-5 my-2 text-xl rounded text-white bg-[#333e4a] shadow-[3px_3px_3px_rgb(0,0,0)] text-shadow-md">My Profile</button>
-            <button className="p-2 mx-5 my-2 text-xl rounded text-white bg-[#333e4a] shadow-[3px_3px_3px_rgb(0,0,0)] text-shadow-md">Find User</button>
-            <button className="p-2 mx-5 my-2 text-xl rounded text-white bg-[#333e4a] shadow-[3px_3px_3px_rgb(0,0,0)] text-shadow-md">Login</button>
+          {/* Menu */}
+          <Container ref={menuRef} className="w-[12%] h-full sticky top-[20px]">
+            <Container className="relative right-[100%] menu-slide-in bg-[#1f242a] p-5 h-full">
+              <Title className="mx-3 mb-3 tracking-wider shadows-font bottom-line">Menu</Title>
+              <Container className="flex flex-col">
+                <Button className="group-hover:underline" containerClassName="group hover:bg-[#333e4a]" leftIcon={Icons.ProfileIcon}>My Profile</Button>
+                <Button className="group-hover:underline" containerClassName="group hover:bg-[#333e4a]" leftIcon={Icons.SearchIcon}>Search</Button>
+                <Button className="group-hover:underline" containerClassName="group hover:bg-[#333e4a]" leftIcon={Icons.FindPersonIcon}>Find User</Button>
+                <Button className="group-hover:underline" containerClassName="group hover:bg-[#333e4a]" leftIcon={Icons.UploadIcon}>Upload</Button>
+                <Button className="group-hover:underline" containerClassName="group hover:bg-[#333e4a]" leftIcon={Icons.LoginIcon}>Login</Button>
+              </Container>
+            </Container>
           </Container>
+
+
+          {/* Page Content */}
+          <Container className="w-[75%] rounded fade-in-slow m-5">
+            <Title className="mx-3 tracking-wider text-left shadows-font bottom-line mb-7" remove="text-center">Dashboard</Title>
+            {/* <Container className="w-[200px] h-[200px] bg-black"></Container> */}
+          </Container>
+
         </Container>
       </Container>
-
-
-      {/* Page Content */}
-      <Container add="w-[75%] rounded fade-in-slow m-5">
-        <Title add="tracking-wider shadows-font text-left bottom-line mx-3 mb-7" remove="text-center">Dashboard</Title>
-      </Container>
-
-    </Container>
+    </>
   );
 };
 

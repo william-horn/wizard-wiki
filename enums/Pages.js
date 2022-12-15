@@ -55,8 +55,8 @@ const Pages = new EnumCollection({
       name: 'HeaderFooterLayout',
       excludes: {
         header: true,
-        // navbar: true
-        // footer: true
+        navbar: true,
+        footer: true
       }
     }
   }),

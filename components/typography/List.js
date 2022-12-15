@@ -2,17 +2,17 @@ import Container from "../containers/Container";
 import Text from "./Text";
 import constructClassName from "../../lib/helpers/constructClassName";
 
-const List = ({ children, add, remove }) => {
+const List = ({ children, className, remove }) => {
   return (
-    <Container add={constructClassName("", {add, remove})}>
+    <Container className={constructClassName("", {className, remove})}>
       {children}
     </Container>
   );
 };
 
-List.Item = ({ children, add, remove }) => {
+List.Item = ({ children, className, remove }) => {
   return (
-    <Text add={constructClassName("list-item", {add, remove})}>{children}</Text>
+    <Text className={constructClassName("list-item", {className, remove})}>{children}</Text>
   );
 }
 

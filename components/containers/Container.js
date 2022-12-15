@@ -1,9 +1,9 @@
 import constructClassName from "../../lib/helpers/constructClassName";
 import React from 'react';
 
-const Container = React.forwardRef(({ children, add, remove }, ref) => {
+const Container = React.forwardRef(({ children, className, remove, onClick }, ref) => {
   return (
-    <div ref={ref} className={constructClassName("", {add, remove})}>
+    <div onClick={onClick} ref={ref} className={constructClassName("", {className, remove})}>
       {children}
     </div>
   );

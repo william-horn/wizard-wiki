@@ -53,7 +53,7 @@ function MyApp({ Component, pageProps }) {
       currentUrl,
       layoutDiff
     }}>
-      <Container add="wrapper min-h-screen bg-primary">
+      <Container className="wrapper min-h-screen bg-primary">
         <LayoutController>
           <Component {...pageProps} />
         </LayoutController>

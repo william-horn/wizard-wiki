@@ -15,12 +15,12 @@ const navPages = [
   Enum.Pages.News
 ]
 
-const Navbar = React.forwardRef(({ add, remove, override, style }, ref) => {
+const Navbar = React.forwardRef(({ className, remove, override, style }, ref) => {
   const { currentPage } = useAppContext();
   if (currentPage.excludes('navbar', override)) return <></>;
   
   return (
-    <nav ref={ref} style={style} className={constructClassName("navbar-container flex flex-wrap sticky top-0 z-50 justify-center p-3 bottom-line bg-secondary", {add, remove})}>
+    <nav ref={ref} style={style} className={constructClassName("navbar-container flex flex-wrap sticky top-0 z-50 justify-center p-3 bottom-line bg-secondary", {className, remove})}>
       {
         navPages.map((page, index) =>
           <NavLink

@@ -5,7 +5,7 @@ import Container from "./Container";
 
 const Page = ({ children, className="" }) => {
   return (
-    <Container add={'page-container w-full h-full overflow-auto ' + className}>
+    <Container className={'page-container w-full h-full overflow-auto ' + className}>
       {children}
     </Container>
   );

@@ -22,18 +22,10 @@ const HeaderFooterLayout = ({ children }) => {
   const navbarRef = useRef(null);
   const footerRef = useRef(null);
 
-  const context = {
-    navbarHeight: 0,
-  };
+  const context = {};
 
   // Determine if we should transition layout sub-components
   const transitionHeader = layoutDiff('header');
-
-  useEffect(() => {
-    const navbar = navbarRef.current;
-    context.navbarHeight = navbar ? navbar.clientHeight : context.navbarHeight;
-    console.log('computed navbar height: ', context.navbarHeight);
-  });
 
   // Handle layout sub-component transitions between pages
   useEffect(() => {
@@ -71,7 +63,7 @@ const HeaderFooterLayout = ({ children }) => {
   });
   
   return (
-    <Container add="header-footer-layout bg-primary">
+    <Container className="header-footer-layout bg-primary">
       <Head>
         <title>{currentPage.title}</title>
       </Head>
@@ -79,8 +71,8 @@ const HeaderFooterLayout = ({ children }) => {
       {/* Override should be false when we load into a page and it doesn't need a transition. */}
       {/* If there is no last page, override should be false because there is nothing to transition from. */}
       {/* If there is a last page, but the last page and first page both have the same header state, there is no need to transition. */}
-      <Header ref={headerRef} override={transitionHeader} add="relative">
-        <Container add="absolute w-[657px] h-[600px] left-[70%] top-[-175px] rotate-[25deg] pointer-events-none select-none">
+      <Header ref={headerRef} override={transitionHeader} className="relative">
+        <Container className="absolute w-[657px] h-[600px] left-[70%] top-[-175px] rotate-[25deg] pointer-events-none select-none">
           {screenWidth > 1250 && <Image 
             priority 
             alt="grandmother raven" 
@@ -95,11 +87,11 @@ const HeaderFooterLayout = ({ children }) => {
           />}
         </Container>
         <Header.Title>
-          <Container add="relative inline-block">
+          <Container className="relative inline-block">
             <span className="relative">Welcome to&nbsp;</span>
             {/* <Image className="absolute pointer-events-none select-none top-[-42px] left-[-4%]" src="/wizard-hat.png" alt="wizard hat" width={75} height={65}/> */}
           </Container>
-          <Container add="relative inline-block">
+          <Container className="relative inline-block">
             <span className="relative z-10 text-primary logo-shadow">Raven</span>
             <Image 
               className="absolute pointer-events-none select-none top-[-25%] left-[60%] logo-image" 
@@ -111,7 +103,7 @@ const HeaderFooterLayout = ({ children }) => {
           </Container>
         </Header.Title>
 
-        {/* <Text add="p-1 mb-5 text-center">
+        {/* <Text className="p-1 mb-5 text-center">
           The most comprehensive media, analytics, and social website for&nbsp;
           <span className="underline text-color-3"><Link href="https://www.wizard101.com/">Wizard101.</Link></span>
         </Text> */}
@@ -121,30 +113,30 @@ const HeaderFooterLayout = ({ children }) => {
       <Navbar ref={navbarRef}/>
       
       <HeaderFooterLayoutProvider value={context}>
-        <Container add="layout-frame min-h-screen relative">
+        <Container className="layout-frame min-h-screen relative">
           {children}
         </Container>
       </HeaderFooterLayoutProvider>
 
-      <Footer add="pb-10 top-line" ref={footerRef}>
+      <Footer className="pb-10 top-line" ref={footerRef}>
         <Footer.Title className="p-4 text-center">Reach Out</Footer.Title>
-        <Container add="flex flex-wrap items-start justify-between gap-12 p-4 pb-10 lg:justify-center">
+        <Container className="flex flex-wrap items-start justify-between gap-12 p-4 pb-10 lg:justify-center">
 
-          <Container add="p-3 pt-0 left-line">
-            <Title add="p-0 text-left" remove="p-2 text-center">Contributors</Title>
+          <Container className="p-3 pt-0 left-line">
+            <Title className="p-0 text-left" remove="p-2 text-center">Contributors</Title>
             <Text><span className="font-bold">Lead dev: </span>William J. Horn</Text>
           </Container>
 
-          <Container add="p-3 pt-0 left-line">
-            <Title add="p-0 text-left" remove="p-2 text-center">Contact</Title>
+          <Container className="p-3 pt-0 left-line">
+            <Title className="p-0 text-left" remove="p-2 text-center">Contact</Title>
             <Text><span className="font-bold">Phone:</span> <span className="underline">(not yet available)</span></Text>
             <Text><span className="font-bold">Email:</span> <span className="underline">williamjosephhorn@gmail.com</span></Text>
             <Text><span className="font-bold">Discord:</span> <span className="underline">Equality#6453</span></Text>
             <Text><span className="font-bold">Github:</span> <span className="underline"><Link href="https://github.com/william-horn">https://github.com/william-horn</Link></span></Text>
           </Container>
 
-          <Container add="p-3 pt-0 left-line">
-            <Title add="p-0 text-left" remove="p-2 text-center">Social</Title>
+          <Container className="p-3 pt-0 left-line">
+            <Title className="p-0 text-left" remove="p-2 text-center">Social</Title>
             <Text><span className="font-bold">Instagram</span> <span className="underline">(not yet available)</span></Text>
             <Text><span className="font-bold">Twitter</span> <span className="underline">(not yet available)</span></Text>
             <Text><span className="font-bold">Facebook</span> <span className="underline">(not yet available)</span></Text>
@@ -154,8 +146,8 @@ const HeaderFooterLayout = ({ children }) => {
         </Container>
 
         <Footer.Title className="p-4 text-center">Disclaimer:</Footer.Title>
-        <Container add="w-4/5 ml-auto mr-auto">
-          <Text add="text-center">
+        <Container className="w-4/5 ml-auto mr-auto">
+          <Text className="text-center">
             <span className="font-bold">Please note: </span>
             Raven is in no way affiliated with the Wizard101 team or Kingsisle corporation. We are entirely a private and separate entity. All concerns about Wizard101
             or inquiries to Wizard101 leadership should be directed towards actual Wizard101 staff. If you need assistance beyond what a normal player can grant you, then 
