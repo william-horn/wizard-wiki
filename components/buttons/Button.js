@@ -17,18 +17,26 @@ const Button = ({
 }) => {
   return (
     <Container onClick={onClick} className={constructClassName("flex items-center mx-2 my-2 px-2 rounded cursor-pointer", {className: containerClassName, remove: containerRemove})}>
-      <Container className="icon-frame relative w-[25px] h-[25px]">
-        {leftIcon ? <Image className="custom-icon filter invert" src={leftIcon} fill sizes={iconSizes}/> : <></>}
-      </Container>
+      {
+        leftIcon ? 
+          <Container className="icon-frame relative w-[25px] h-[25px]">
+            <Image alt="icon" className="custom-icon filter invert" src={leftIcon} fill sizes={iconSizes}/>
+          </Container> 
+        : <></>
+      }
 
       <button
       className={constructClassName("flex-auto p-2 text-left text-white rounded text-md", {className, remove})}>
         {children}
       </button>
       
-      <Container className="icon-frame relative w-[25px] h-[25px]">
-        {rightIcon ? <Image className="custom-icon filter invert" src={rightIcon} fill sizes={iconSizes}/> : <></>}
-      </Container>
+      {
+        rightIcon ?
+          <Container className="icon-frame relative w-[25px] h-[25px]">
+            <Image alt="icon" className="custom-icon filter invert" src={rightIcon} fill sizes={iconSizes}/>
+          </Container>
+        : <></>
+      }
     </Container>
   );
 };
