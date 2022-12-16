@@ -37,7 +37,7 @@ const Explore = function() {
             </Container>
             <Title className="hidden mb-3 ml-3 tracking-wider text-left md:block" remove="text-center">Menu</Title>
             <Container className="flex flex-row justify-start overflow-x-auto md:flex-col md:flex-nowrap md:justify-start">
-              <Link href="/profile"><Button containerClassName="group hover:bg-[#333e4a] md:mx-2 mx-0" containerRemove="mx-2" leftIcon={Icons.ProfileIcon}>My Profile</Button></Link>
+              <Link href="/profile" className="min-w-fit"><Button containerClassName="group hover:bg-[#333e4a] md:mx-2 mx-0" containerRemove="mx-2" leftIcon={Icons.ProfileIcon}>My Profile</Button></Link>
               <Button containerClassName="group hover:bg-[#333e4a] md:mx-2 mx-0" containerRemove="mx-2" leftIcon={Icons.SearchIcon}>Search</Button>
               <Button containerClassName="group hover:bg-[#333e4a] md:mx-2 mx-0" containerRemove="mx-2" leftIcon={Icons.FindPersonIcon}>Find User</Button>
               <Button containerClassName="group hover:bg-[#333e4a] md:mx-2 mx-0" containerRemove="mx-2" leftIcon={Icons.UploadIcon}>Upload</Button>
@@ -60,43 +60,51 @@ const Explore = function() {
 
               {/* First section */}
               <Container className="flex w-full h-full">
-                <Container className="flex flex-col flex-[2.5] m-3">
+                <Container className="flex flex-col flex-[2.5] m-3 mr-5">
 
                   {/* News */}
-                  <Container className="mb-3 flex-[1.5] opacity-0 animate-fade-in-second">
+                  <Container className="flex-[1.5] opacity-0 shadow-[0_0_15px_black] rounded-[15px] relative animate-fade-in-second">
                     <Title className="text-left" remove="text-center">News</Title>
                     <Container className="flex p-3">
-                      <Container className="relative flex-[0.3] h-[150px] rounded-[15px] overflow-hidden border-[#2b3139] border-[3px] border-solid">
+                      <Container className="relative flex-[0.3] h-[150px] rounded-[15px] overflow-hidden card-shadow mr-3">
                         <Image alt="news banner" src={Images.NewsBannerImg} sizes="20vw" className="absolute object-cover object-center w-[300px] h-auto" fill/>
                       </Container>
-                      <List className="ml-6">
-                        <List.Item>New stuff coming soon</List.Item>
-                        <List.Item>It's going to be exciting</List.Item>
-                        <List.Item>This is where updates will be posted</List.Item>
-                        <List.Item>Jellyfish Broccoli</List.Item>
-                      </List>
+                      <Container>
+                        <Text>Testing</Text>
+                        <List className="ml-6">
+                          <List.Item>New stuff coming soon</List.Item>
+                          <List.Item>It's going to be exciting</List.Item>
+                          <List.Item>This is where updates will be posted</List.Item>
+                          <List.Item>Jellyfish Broccoli</List.Item>
+                        </List>
+                      </Container>
+                    </Container>
+                    <Container>
+                      <Title>Another thing</Title>
                     </Container>
                   </Container>
 
                   {/* Recent Posts */}
-                  <Container className="flex-1 opacity-0 animate-fade-in-fourth">
+                  <Container className="flex-1 mt-5 opacity-0 shadow-[0_0_15px_black] rounded-[15px] relative animate-fade-in-fourth">
                     <Title className="text-left" remove="text-center">Recent Posts</Title>
                   </Container>
                 </Container>
                 
                 {/* Popular Posts */}
-                <Container className="flex flex-col flex-1 mt-3 mb-3 mr-3 opacity-0 animate-fade-in-third">
+                <Container className="flex flex-col flex-1 mt-3 mb-3 mr-3 opacity-0 shadow-[0_0_15px_black] rounded-[15px] relative animate-fade-in-third">
                   <Title>Popular Posts</Title>
                   <Container className="h-full p-4 overflow-y-auto">
 
                     {/* Single post example */}
-                    <Container className="w-full h-[150px] bg-[#2b3139] rounded-[15px] p-3 flex flex-col">
+                    <Container className="w-full rounded-[15px] p-3 flex flex-col hover:bg-[#262b32] transition-colors group cursor-pointer">
                       <Container className="flex justify-between mb-3">
-                        <Title className="text-lg text-left text-[#9bd5ff]" remove="text-2xl text-center p-2 mb-3 text-white">Why is the rum gone?</Title>
-                        <Text className=" text-[#5f666e] font-mono font-medium">12/16/2022</Text>
+                        <Title className="text-lg text-left text-[#9bd5ff] font-extrabold group-hover:underline" remove="text-2xl text-center p-2 mb-3 text-white">Just a test post</Title>
+                        <Text className=" text-[#5f666e] font-light">12/16/2022</Text>
                       </Container>
-                      <Container className="h-full bg-black">
-
+                      <Container className="flex h-full">
+                        <Container className="relative w-[85px] h-[85px] rounded-[50%] overflow-hidden">
+                          <Image alt="upload pic" src={Images.TestPicImg} fill sizes="100px" className="object-cover"/>
+                        </Container>
                       </Container>
                     </Container>
 

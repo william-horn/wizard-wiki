@@ -6,6 +6,7 @@ import LogoImg from './logo3.webp';
 import WizPacksImg from './wiz-packs.webp';
 import WizardBannerImg from './wiz-pic-2.webp';
 import NewsBannerImg from './news-banner-test.webp';
+import TestPicImg from './test-pic.webp';
 
 const Images = {
   CriticalShotImg,
@@ -14,7 +15,8 @@ const Images = {
   LogoImg,
   WizPacksImg,
   WizardBannerImg,
-  NewsBannerImg
+  NewsBannerImg,
+  TestPicImg
 }
 
 export default Images;
