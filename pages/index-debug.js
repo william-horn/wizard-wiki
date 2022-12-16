@@ -11,7 +11,6 @@ import Title from '../components/typography/Title';
 import Wizard101 from '../components/typography/Wizard101';
 import WikiLink from '../components/typography/WikiLink';
 import List from '../components/typography/List';
-import WizardBannerImg from '../public/wiz-pic-2.png';
 import useWindowDimensions from '../hooks/useWindowDimensions';
 import { isClient } from '../lib/helpers/machineType';
 import { useEffect, useRef } from 'react';

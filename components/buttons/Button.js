@@ -14,8 +14,6 @@ const Button = ({
   iconSize='25px',
   onClick 
 }) => {
-  //w-[25px]
-  //h-[25px]
   const iconContaierClass = "icon-frame relative";
   const iconClass = "custom-icon filter invert";
 

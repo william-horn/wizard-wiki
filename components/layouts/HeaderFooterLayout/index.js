@@ -13,6 +13,7 @@ import { useAppContext } from '../../../providers/AppProvider';
 import HeaderFooterLayoutProvider from '../../../providers/HeaderFooterLayoutProvider';
 import { useRef, useEffect } from 'react';
 import useWindowDimensions from '../../../hooks/useWindowDimensions';
+import Images from '../../../public/images';
 
 const HeaderFooterLayout = ({ children }) => {
   const { currentPage, layoutDiff } = useAppContext();
@@ -80,14 +81,11 @@ const HeaderFooterLayout = ({ children }) => {
           {screenWidth > 1250 && <Image 
             priority 
             alt="grandmother raven" 
-            src="/grandma-raven-crop-3.png"
+            src={Images.GrandmaRavenImg}
             fill 
             quality={30}
             className="xl:block md:hidden home-image" 
-            sizes="(min-width: 1280px) 33vw,
-            (min-width: 1528px) 25vw,
-            (min-width: 1870px) 20vw,
-            0vw"
+            sizes="(min-width: 1500px) 18vw, 400px"
           />}
         </Container>
         <Header.Title>
@@ -99,7 +97,7 @@ const HeaderFooterLayout = ({ children }) => {
             <span className="relative z-10 text-primary logo-shadow">Raven</span>
             <Image 
               className="absolute pointer-events-none select-none top-[-25%] left-[60%] logo-image" 
-              src="/logo3.png" 
+              src={Images.LogoImg}
               alt="logo" 
               width={75} 
               height={75}

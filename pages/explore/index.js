@@ -11,7 +11,7 @@ import { useEffect, useState, useRef } from 'react';
 import { useAppContext } from "../../providers/AppProvider";
 import Navbar from "../../components/layouts/HeaderFooterLayout/Navbar";
 import Button from "../../components/buttons/Button";
-import Icons from '../../lib/helpers/icons';
+import Icons from '../../public/icons';
 
 const Explore = function() {
   const navbarRef = useRef(null);
