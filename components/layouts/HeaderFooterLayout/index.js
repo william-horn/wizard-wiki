@@ -84,8 +84,8 @@ const HeaderFooterLayout = ({ children }) => {
             src={Images.GrandmaRavenImg}
             fill 
             quality={30}
-            className="xl:block md:hidden home-image" 
-            sizes="(min-width: 1500px) 18vw, 400px"
+            className="xl:block md:hidden filter blur-[1px]" 
+            sizes="25vw"
           />}
         </Container>
         <Header.Title>
