@@ -5,6 +5,7 @@ import GrandmaRavenImg from './grandma-raven-crop-3.webp';
 import LogoImg from './logo3.webp';
 import WizPacksImg from './wiz-packs.webp';
 import WizardBannerImg from './wiz-pic-2.webp';
+import NewsBannerImg from './news-banner-test.webp';
 
 const Images = {
   CriticalShotImg,
@@ -12,7 +13,8 @@ const Images = {
   GrandmaRavenImg,
   LogoImg,
   WizPacksImg,
-  WizardBannerImg
+  WizardBannerImg,
+  NewsBannerImg
 }
 
 export default Images;

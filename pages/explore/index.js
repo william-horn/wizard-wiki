@@ -14,6 +14,7 @@ import { useAppContext } from "../../providers/AppProvider";
 import Navbar from "../../components/layouts/HeaderFooterLayout/Navbar";
 import Button from "../../components/buttons/Button";
 import Icons from '../../public/icons';
+import Images from "../../public/images";
 
 const Explore = function() {
   const { screenWidth } = useWindowDimensions();
@@ -31,8 +32,8 @@ const Explore = function() {
         <Container ref={menuRef} className={"menu-bar md:min-w-[215px] md:shadow-[none] card-shadow min-w-full md:h-full h-fit sticky top-[20px]"}>
           <Container className={"relative right-[100%] md:m-0 mx-10 md:p-5 p-0 h-full md:card-shadow shadow-[none] menu-slide-in"}>
             <Container className="absolute flex flex-col justify-center w-full h-full pointer-events-none cursor md:hidden">
-              <Image src={Icons.ArrowLeftIcon} width={24} height={24} className="absolute right-[100%] filter invert"/>
-              <Image src={Icons.ArrowLeftIcon} width={24} height={24} className="absolute left-[100%] filter invert rotate-180"/>
+              <Image alt="icon" src={Icons.ArrowLeftIcon} width={24} height={24} className="absolute right-[100%] filter invert"/>
+              <Image alt="icon" src={Icons.ArrowLeftIcon} width={24} height={24} className="absolute left-[100%] filter invert rotate-180"/>
             </Container>
             <Title className="hidden mb-3 ml-3 tracking-wider text-left md:block" remove="text-center">Menu</Title>
             <Container className="flex flex-row justify-start overflow-x-auto md:flex-col md:flex-nowrap md:justify-start">
@@ -64,8 +65,11 @@ const Explore = function() {
                   {/* News */}
                   <Container className="mb-3 flex-[1.5] opacity-0 animate-fade-in-second">
                     <Title className="text-left" remove="text-center">News</Title>
-                    <Container className="p-3">
-                      <List className="ml-4">
+                    <Container className="flex p-3">
+                      <Container className="relative flex-[0.3] h-[150px] rounded-[15px] overflow-hidden border-[#2b3139] border-[3px] border-solid">
+                        <Image alt="news banner" src={Images.NewsBannerImg} sizes="20vw" className="absolute object-cover object-center w-[300px] h-auto" fill/>
+                      </Container>
+                      <List className="ml-6">
                         <List.Item>New stuff coming soon</List.Item>
                         <List.Item>It's going to be exciting</List.Item>
                         <List.Item>This is where updates will be posted</List.Item>
@@ -76,13 +80,28 @@ const Explore = function() {
 
                   {/* Recent Posts */}
                   <Container className="flex-1 opacity-0 animate-fade-in-fourth">
-                    <Title>Recent Posts</Title>
+                    <Title className="text-left" remove="text-center">Recent Posts</Title>
                   </Container>
                 </Container>
                 
                 {/* Popular Posts */}
-                <Container className="flex-1 mt-3 mb-3 mr-3 opacity-0 animate-fade-in-third">
+                <Container className="flex flex-col flex-1 mt-3 mb-3 mr-3 opacity-0 animate-fade-in-third">
                   <Title>Popular Posts</Title>
+                  <Container className="h-full p-4 overflow-y-auto">
+
+                    {/* Single post example */}
+                    <Container className="w-full h-[150px] bg-[#2b3139] rounded-[15px] p-3 flex flex-col">
+                      <Container className="flex justify-between mb-3">
+                        <Title className="text-lg text-left text-[#9bd5ff]" remove="text-2xl text-center p-2 mb-3 text-white">Why is the rum gone?</Title>
+                        <Text className=" text-[#5f666e] font-mono font-medium">12/16/2022</Text>
+                      </Container>
+                      <Container className="h-full bg-black">
+
+                      </Container>
+                    </Container>
+
+
+                  </Container>
                 </Container>
               </Container>
 
