@@ -14,13 +14,17 @@ const Button = ({
   iconSize='25px',
   onClick 
 }) => {
-  console.log('icon size: ', iconSize);
+  //w-[25px]
+  //h-[25px]
+  const iconContaierClass = "icon-frame relative";
+  const iconClass = "custom-icon filter invert";
+
   return (
     <Container onClick={onClick} className={constructClassName("flex items-center mx-2 my-2 px-2 rounded cursor-pointer", {className: containerClassName, remove: containerRemove})}>
       {
         leftIcon ? 
-          <Container className={`icon-frame relative w-[${iconSize}] h-[${iconSize}]`}>
-            <Image alt="icon" className="custom-icon filter invert" src={leftIcon} fill sizes="48px"/>
+          <Container className={iconContaierClass} style={{width: iconSize, height: iconSize}}>
+            <Image alt="icon" className={iconClass} src={leftIcon} fill sizes="48px"/>
           </Container> 
         : <></>
       }
@@ -32,8 +36,8 @@ const Button = ({
       
       {
         rightIcon ?
-          <Container className={`icon-frame relative w-[${iconSize}] h-[${iconSize}]`}>
-            <Image alt="icon" className="custom-icon filter invert" src={rightIcon} fill sizes="48px"/>
+          <Container className={iconContaierClass} style={{width: iconSize, height: iconSize}}>
+            <Image alt="icon" className={iconClass} src={rightIcon} fill sizes="48px"/>
           </Container>
         : <></>
       }
