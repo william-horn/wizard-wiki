@@ -16,7 +16,7 @@ import useWindowDimensions from '../../../hooks/useWindowDimensions';
 import Images from '../../../public/images';
 
 const HeaderFooterLayout = ({ children }) => {
-  const { currentPage, layoutDiff } = useAppContext();
+  const { currentPage, layoutDiff, lastPage } = useAppContext();
   const { width: screenWidth } = useWindowDimensions();
 
   const headerRef = useRef(null);
@@ -33,6 +33,7 @@ const HeaderFooterLayout = ({ children }) => {
     const header = headerRef.current;
     const navbar = navbarRef.current;
     const footer = footerRef.current;
+
     /* 
       If header override is false, the current page may not have a header, in which case exit out.
       If header override is true, header will always exist.
@@ -42,6 +43,10 @@ const HeaderFooterLayout = ({ children }) => {
       If there is no difference in headers between pages, exit out.
     */
     if (!transitionHeader) return;
+    /*
+      If the last page doesn't use a layout, skip transitioning
+    */
+    if (lastPage && !lastPage.layout) return;
 
     /* 
       From here on, we know there is a difference in header visibility between pages and a transition will take place.
@@ -72,6 +77,7 @@ const HeaderFooterLayout = ({ children }) => {
       <Head>
         <title>{currentPage.title}</title>
       </Head>
+
       {/* Page Header */}
       {/* Override should be false when we load into a page and it doesn't need a transition. */}
       {/* If there is no last page, override should be false because there is nothing to transition from. */}
@@ -114,12 +120,16 @@ const HeaderFooterLayout = ({ children }) => {
       {/* Page Nav bar */}
       <Navbar ref={navbarRef}/>
       
+
+      {/* Page Content */}
       <HeaderFooterLayoutProvider value={context}>
         <Container className="relative min-h-screen layout-frame">
           {children}
         </Container>
       </HeaderFooterLayoutProvider>
 
+
+      {/* Page Footer */}
       <Footer className="pb-10 top-line" ref={footerRef}>
         <Footer.Title className="p-4 text-center">Reach Out</Footer.Title>
         <Container className="flex flex-wrap items-start justify-between gap-12 p-4 pb-10 lg:justify-center">

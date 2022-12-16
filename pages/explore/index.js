@@ -19,47 +19,55 @@ const Explore = function() {
 
   return (
     <Container className="flex flex-col w-full h-screen page-body">
-      <Navbar ref={navbarRef} override/>
+      <Navbar ref={navbarRef} className="animate-nav-explore-theme" override/>
       <Container className="flex w-full h-full page-content">
 
         {/* Menu */}
         <Container ref={menuRef} className="menu-bar w-[14%] h-full sticky top-[20px]">
-          <Container className="relative right-[100%] menu-slide-in bg-[#1f242a] p-5 h-full">
-            <Title className="mx-3 mb-3 tracking-wider text-left shadows-font bottom-line" remove="text-center">Menu</Title>
+          <Container className="relative right-[100%] menu-slide-in card-shadow p-5 h-full">
+            <Title className="mb-3 ml-3 tracking-wider text-left" remove="text-center">Menu</Title>
             <Container className="flex flex-col">
-              <Button className="group-hover:underline" containerClassName="group hover:bg-[#333e4a]" leftIcon={Icons.ProfileIcon}>My Profile</Button>
-              <Button className="group-hover:underline" containerClassName="group hover:bg-[#333e4a]" leftIcon={Icons.SearchIcon}>Search</Button>
-              <Button className="group-hover:underline" containerClassName="group hover:bg-[#333e4a]" leftIcon={Icons.FindPersonIcon}>Find User</Button>
-              <Button className="group-hover:underline" containerClassName="group hover:bg-[#333e4a]" leftIcon={Icons.UploadIcon}>Upload</Button>
-              <Button className="group-hover:underline" containerClassName="group hover:bg-[#333e4a]" leftIcon={Icons.SettingsIcon}>Settings</Button>
-              <Button className="group-hover:underline" containerClassName="group hover:bg-[#333e4a]" leftIcon={Icons.LoginIcon}>Login</Button>
+              <Link href="/profile"><Button className="" containerClassName="group hover:bg-[#333e4a]" leftIcon={Icons.ProfileIcon}>My Profile</Button></Link>
+              <Button className="" containerClassName="group hover:bg-[#333e4a]" leftIcon={Icons.SearchIcon}>Search</Button>
+              <Button className="" containerClassName="group hover:bg-[#333e4a]" leftIcon={Icons.FindPersonIcon}>Find User</Button>
+              <Button className="" containerClassName="group hover:bg-[#333e4a]" leftIcon={Icons.UploadIcon}>Upload</Button>
+              <Button className="" containerClassName="group hover:bg-[#333e4a]" leftIcon={Icons.SettingsIcon}>Settings</Button>
+              <Button className="" containerClassName="group hover:bg-[#333e4a]" leftIcon={Icons.LoginIcon}>Login</Button>
             </Container>
           </Container>
         </Container>
 
 
         {/* Page Content */}
-        <Container className="flex flex-col w-full m-5 rounded dashboard-frame fade-in-slow">
-          <Title className="mx-3 tracking-wider text-left shadows-font bottom-line mb-7" remove="text-center">Dashboard</Title>
+        <Container className="flex flex-col w-full m-5 rounded dashboard-frame">
+          <Title className="mb-3 text-3xl tracking-wider text-left opacity-0 animate-fade-in-first" remove="text-center text-2xl">Dashboard</Title>
 
           {/* Page below title frame */}
-          <Container className="relative h-full bg-secondary dashboard-content">
+          <Container className="relative h-full dashboard-content">
 
             {/* Scroll frame */}
             <Container className="absolute w-full h-full overflow-y-auto dashboard-scroll-frame">
 
               {/* First section */}
               <Container className="flex w-full h-full">
-                <Container className="flex flex-col flex-[2.5] mt-3 mx-3">
-                  <Container className="mb-3 bg-color-6">
+                <Container className="flex flex-col flex-[2.5] m-3">
+
+                  {/* News */}
+                  <Container className="mb-3 flex-[1.5] opacity-0 animate-fade-in-second">
                     <Title>News</Title>
+                    <Container>
+
+                    </Container>
                   </Container>
-                  <Container className="bg-color-6">
+
+                  {/* Recent Posts */}
+                  <Container className="flex-1 opacity-0 animate-fade-in-fourth">
                     <Title>Recent Posts</Title>
                   </Container>
                 </Container>
                 
-                <Container className="flex-1 mt-3 mr-3 bg-color-6">
+                {/* Popular Posts */}
+                <Container className="flex-1 mt-3 mb-3 mr-3 opacity-0 animate-fade-in-third">
                   <Title>Popular Posts</Title>
                 </Container>
               </Container>

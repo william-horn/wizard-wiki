@@ -8,7 +8,7 @@ import { useAppContext } from "../../providers/AppProvider";
 
 const LayoutController = ({ children }) => {
   const { currentPage } = useAppContext();
-  const layoutName = typeof currentPage.layout === 'string' && currentPage.layout || currentPage.layout.name;
+  const layoutName = currentPage.layout ? (typeof currentPage.layout === 'string' && currentPage.layout || currentPage.layout.name) : null;
 
   const getRenderedLayout = () => {
     switch (layoutName) {

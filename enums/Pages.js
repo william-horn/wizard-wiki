@@ -10,9 +10,8 @@ import { enumify, EnumCollection } from './Enum';
 
 const pageItemPrototypes = {
   excludes: function(componentName, override) {
-    if (!this.layout.excludes || override) {
-      return false;
-    }
+    if (!this.layout) return true;
+    if (!this.layout.excludes || override) return false;
 
     return this.layout.excludes[componentName] === true;
   }
@@ -67,6 +66,13 @@ const Pages = new EnumCollection({
     name: 'Donate',
     url: '/donate',
     layout: { name: 'HeaderFooterLayout' },
+  }),
+
+  Profile: new PageItem({ 
+    value: 'profile',
+    title: 'Raven Profile',
+    name: 'My Profile',
+    url: '/profile'
   }),
 
   News: new PageItem({ 
