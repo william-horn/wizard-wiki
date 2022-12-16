@@ -39,6 +39,10 @@
   .nav-link.hover-effect {
     @apply text-[#84baff];
   }
+
+  .card-shadow {
+    @apply shadow-[0_0_5px_black]
+  }
 }
 
 html,
@@ -83,9 +87,9 @@ a {
   animation-fill-mode: forwards; */
 }
 
-.card-shadow {
+/* .card-shadow {
   box-shadow: 0 0 5px black;
-}
+} */
 
 .home-image {
   filter: drop-shadow(2px 4px 15px black);

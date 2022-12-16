@@ -28,16 +28,20 @@ const Explore = function() {
       <Container className={"flex w-full h-full page-content flex-col md:flex-row"}>
 
         {/* Menu */}
-        <Container ref={menuRef} className={"menu-bar min-w-[215px] md:h-full h-fit sticky top-[20px]"}>
-          <Container className={"relative right-[100%] card-shadow p-5 h-full menu-slide-in"}>
+        <Container ref={menuRef} className={"menu-bar md:min-w-[215px] md:shadow-[none] card-shadow min-w-full md:h-full h-fit sticky top-[20px]"}>
+          <Container className={"relative right-[100%] md:m-0 mx-10 md:p-5 p-0 h-full md:card-shadow shadow-[none] menu-slide-in"}>
+            <Container className="absolute flex flex-col justify-center w-full h-full md:hidden">
+              <Image src={Icons.ArrowLeftIcon} width={24} height={24} className="absolute right-[100%] filter invert"/>
+              <Image src={Icons.ArrowLeftIcon} width={24} height={24} className="absolute left-[100%] filter invert rotate-180"/>
+            </Container>
             <Title className="hidden mb-3 ml-3 tracking-wider text-left md:block" remove="text-center">Menu</Title>
-            <Container className="flex flex-row flex-wrap justify-center md:flex-col md:flex-nowrap md:justify-start">
-              <Link href="/profile"><Button containerClassName="group hover:bg-[#333e4a]" leftIcon={Icons.ProfileIcon}>My Profile</Button></Link>
-              <Button containerClassName="group hover:bg-[#333e4a]" leftIcon={Icons.SearchIcon}>Search</Button>
-              <Button containerClassName="group hover:bg-[#333e4a]" leftIcon={Icons.FindPersonIcon}>Find User</Button>
-              <Button containerClassName="group hover:bg-[#333e4a]" leftIcon={Icons.UploadIcon}>Upload</Button>
-              <Button containerClassName="group hover:bg-[#333e4a]" leftIcon={Icons.SettingsIcon}>Settings</Button>
-              <Button containerClassName="group hover:bg-[#333e4a]" leftIcon={Icons.LoginIcon}>Login</Button>
+            <Container className="flex flex-row justify-start overflow-x-auto md:flex-col md:flex-nowrap md:justify-start">
+              <Link href="/profile"><Button containerClassName="group hover:bg-[#333e4a] md:mx-2 mx-0" containerRemove="mx-2" leftIcon={Icons.ProfileIcon}>My Profile</Button></Link>
+              <Button containerClassName="group hover:bg-[#333e4a] md:mx-2 mx-0" containerRemove="mx-2" leftIcon={Icons.SearchIcon}>Search</Button>
+              <Button containerClassName="group hover:bg-[#333e4a] md:mx-2 mx-0" containerRemove="mx-2" leftIcon={Icons.FindPersonIcon}>Find User</Button>
+              <Button containerClassName="group hover:bg-[#333e4a] md:mx-2 mx-0" containerRemove="mx-2" leftIcon={Icons.UploadIcon}>Upload</Button>
+              <Button containerClassName="group hover:bg-[#333e4a] md:mx-2 mx-0" containerRemove="mx-2" leftIcon={Icons.SettingsIcon}>Settings</Button>
+              <Button containerClassName="group hover:bg-[#333e4a] md:mx-2 mx-0" containerRemove="mx-2" leftIcon={Icons.LoginIcon}>Login</Button>
             </Container>
           </Container>
         </Container>
