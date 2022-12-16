@@ -20,18 +20,18 @@ const Explore = function() {
   const navbarRef = useRef(null);
   const menuRef = useRef(null);
 
-  const screen_md = screenWidth <= 768;
+  const screen_md = screenWidth > 768;
 
   return (
     <Container className="flex flex-col w-full h-screen page-body">
       <Navbar ref={navbarRef} className="animate-nav-explore-theme card-shadow" override/>
-      <Container className="flex w-full h-full page-content">
+      <Container className={"flex w-full h-full page-content flex-col md:flex-row"}>
 
         {/* Menu */}
-        <Container ref={menuRef} className={(screen_md ? 'menu-slide-out' : '') + " menu-bar min-w-[215px] h-full sticky top-[20px]"}>
-          <Container className={"relative right-[100%] card-shadow p-5 h-full " + (!screen_md ? 'menu-slide-in' : '')}>
-            <Title className="mb-3 ml-3 tracking-wider text-left" remove="text-center">Menu</Title>
-            <Container className="flex flex-col">
+        <Container ref={menuRef} className={"menu-bar min-w-[215px] md:h-full h-fit sticky top-[20px]"}>
+          <Container className={"relative right-[100%] card-shadow p-5 h-full menu-slide-in"}>
+            <Title className="hidden mb-3 ml-3 tracking-wider text-left md:block" remove="text-center">Menu</Title>
+            <Container className="flex flex-row flex-wrap justify-center md:flex-col md:flex-nowrap md:justify-start">
               <Link href="/profile"><Button containerClassName="group hover:bg-[#333e4a]" leftIcon={Icons.ProfileIcon}>My Profile</Button></Link>
               <Button containerClassName="group hover:bg-[#333e4a]" leftIcon={Icons.SearchIcon}>Search</Button>
               <Button containerClassName="group hover:bg-[#333e4a]" leftIcon={Icons.FindPersonIcon}>Find User</Button>
