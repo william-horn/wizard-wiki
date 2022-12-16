@@ -30,7 +30,7 @@ const Explore = function() {
         {/* Menu */}
         <Container ref={menuRef} className={"menu-bar md:min-w-[215px] md:shadow-[none] card-shadow min-w-full md:h-full h-fit sticky top-[20px]"}>
           <Container className={"relative right-[100%] md:m-0 mx-10 md:p-5 p-0 h-full md:card-shadow shadow-[none] menu-slide-in"}>
-            <Container className="absolute flex flex-col justify-center w-full h-full md:hidden">
+            <Container className="absolute flex flex-col justify-center w-full h-full pointer-events-none cursor md:hidden">
               <Image src={Icons.ArrowLeftIcon} width={24} height={24} className="absolute right-[100%] filter invert"/>
               <Image src={Icons.ArrowLeftIcon} width={24} height={24} className="absolute left-[100%] filter invert rotate-180"/>
             </Container>
