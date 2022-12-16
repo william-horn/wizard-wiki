@@ -2,17 +2,17 @@ import { useState, useEffect } from 'react';
 import { isClient } from '../lib/helpers/machineType';
 
 function getWindowDimensions() {
-  const { innerWidth: width, innerHeight: height } = window;
+  const { innerWidth: screenWidth, innerHeight: screenHeight } = window;
   return {
-    width,
-    height
+    screenWidth,
+    screenHeight
   };
 }
 
 export default function useWindowDimensions() {
   const [windowDimensions, setWindowDimensions] = useState({
-    width: 0,
-    height: 0,
+    screenWidth: 0,
+    screenHeight: 0,
   });
 
   useEffect(() => {

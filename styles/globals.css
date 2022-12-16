@@ -33,7 +33,7 @@
   }
 
   .nav-link {
-    @apply font-semibold underline;
+    @apply font-semibold;
   }
 
   .nav-link.hover-effect {
@@ -127,6 +127,13 @@ a {
   animation-fill-mode: forwards;
 }
 
+.menu-slide-out {
+  animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+  animation-name: move-right-left;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+}
+
 @keyframes logo-color {
   0% { filter: var(--shadow) hue-rotate(0deg); }
   50% { filter: var(--shadow) hue-rotate(90deg); }
@@ -151,6 +158,11 @@ a {
 @keyframes slide-left-right {
   0% { right: 100%; }
   100% { right: 0; }
+}
+
+@keyframes move-right-left {
+  0% { margin-left: 0; right: 0; }
+  100% { margin-left: -215px; right: 100%; }
 }
 
 /*

@@ -18,7 +18,7 @@ import { useEffect, useRef } from 'react';
 import Images from '../public/images';
 
 const Home = () => {
-  const { width: screenWidth } = useWindowDimensions();
+  const { screenWidth } = useWindowDimensions();
 
   return (
     <Container className="w-full h-full p-5 pt-10">

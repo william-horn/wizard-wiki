@@ -17,7 +17,7 @@ import Images from '../../../public/images';
 
 const HeaderFooterLayout = ({ children }) => {
   const { currentPage, layoutDiff, lastPage } = useAppContext();
-  const { width: screenWidth } = useWindowDimensions();
+  const { screenWidth } = useWindowDimensions();
 
   const headerRef = useRef(null);
   const navbarRef = useRef(null);
